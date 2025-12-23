@@ -28,10 +28,10 @@ jobs:
       - name: Deploy to Hostinger via SCP (SFTP)
         uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_HOST }}
+          host: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: out/
-          server-dir: public_html/
-          dangerous-clean-slate: true
+          source: out/
+          target: public_html/
+          strip_components: 1
