@@ -45,7 +45,7 @@ export default function Header() {
               <li className={styles.navItem}>About Us</li>
               <li className={styles.navItem}>Services</li>
               <li className={styles.navItem}>Portfolio</li>
-              <li className={styles.navItem}>Contact Us</li>
+              <li className={styles.navItem}>Staging Works</li>
               <li className={styles.menuCta}><Image src={arrowTheme} alt="Arrow" fill /></li>
             </ul>
           </div>
