@@ -1,0 +1,47 @@
+/* VideoSection.module.css */
+
+.videoSection {
+  height: 100%; /* enough scrollable area */
+  position: relative;
+  z-index: 1;
+}
+
+/* trigger area (GSAP pins this area) */
+.trigger {
+  height: 100vh;
+  position: relative;
+}
+
+/* pinned wrapper (keeps overflow controlled) */
+.pinWrap {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* The element we animate:
+   - fills the viewport (100vw x 100vh),
+   - but initially scaled down to 33% so it visually appears 1/3 screen centered.
+   - transform includes translate to keep it centered.
+*/
+.videoBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0.33); /* initial small centered */
+  transform-origin: center center;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+/* video element */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

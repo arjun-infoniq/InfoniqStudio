@@ -1,0 +1,157 @@
+.mainHeader {
+    z-index: 10;
+    width: 100%;
+    padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .navFlex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            display: block;
+            width: 100%;
+        }
+        .logoWrapper {
+            width: 136px;
+            height: 30px;
+            position: relative;
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+            img {
+                height: 40px !important;
+                width: auto !important;
+            }
+        }
+        .menuWrapper {
+            ul {
+                background-color: #0e0e0e61;
+                border: 1px solid #2f2f2f;
+                padding: 18px 30px;
+                border-radius: 4px;
+                transition: all 0.4s ease-in-out;
+                position: relative;
+                @media screen and (max-width: 768px) {
+                    background-color: transparent;
+                    border: 0;
+                }
+
+                li {
+                    display: inline-block;
+                    font-size: 14px;
+                    margin: 0 15px;
+                    cursor: pointer;
+                }
+                .navItem {
+                    @media screen and (max-width: 768px) {
+                        display: none;
+                    }
+                }
+                .menuLogo {
+                    height: 56px;
+                    margin: 0;
+                    position: absolute;
+                    top: 6px;
+                    left: 6px;
+                    opacity: 0;
+                    img {
+                        height: 42px !important;
+                        width: auto !important;
+                    }
+                }
+                .menuCta {
+                    background-color: var(--theme);
+                    width: 28px;
+                    height: 42px;
+                    margin: 0;
+                    position: absolute;
+                    top: 6px;
+                    right: 6px;
+                    display: flex;
+                    border-radius: 2px;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    img {
+                        width: 12px !important;
+                        height: 12px !important;
+                        top: 50% !important;
+                        left: 50% !important;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+        .ctaWrapper {
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+            button {
+                cursor: pointer;
+                font-weight: 600;
+                background-color: #0e0e0e61;
+                border: 1px solid #2f2f2f;
+                border-radius: 4px;
+                padding: 18px 45px 18px 30px;
+                font-size: 14px;
+                position: relative;
+                transition: all 0.4s ease-in-out;
+                &:hover {
+                    background-color: var(--theme);
+                    // color: #000;
+                    // &::before {
+                    //     filter: invert(1);
+                    // }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 22px;
+                    right: 28px;
+                    width: 10px;
+                    height: 10px;
+                    background-image: url("../../../public/icons/arrow-theme.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 10px;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.mainHeader.active {
+    .logoWrapper {
+        opacity: 0;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .menuWrapper {
+        ul {
+            background-color: #0e0e0e;
+            padding: 18px 56px 18px 56px;
+            @media screen and (max-width: 768px) {
+                padding: 26px;
+                background-color: transparent;
+                border: 0;
+            }
+            .menuLogo {
+                opacity: 1;
+            }
+            .menuCta {
+                opacity: 1;
+            }
+        }
+    }
+    .ctaWrapper {
+        opacity: 0;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
