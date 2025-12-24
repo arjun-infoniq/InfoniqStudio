@@ -41,11 +41,11 @@ export default function Header() {
           <div className={styles.menuWrapper}>
             <ul>
               <li className={styles.menuLogo}><Image src={LogoIcon} alt="Logo" fill /></li>
-              <li className={styles.navItem}>Home W</li>
-              <li className={styles.navItem}>About Us</li>
+              <li className={styles.navItem}>Home</li>
+              <li className={styles.navItem}>About</li>
               <li className={styles.navItem}>Services</li>
               <li className={styles.navItem}>Portfolio</li>
-              <li className={styles.navItem}>Staging W</li>
+              <li className={styles.navItem}>Staging</li>
               <li className={styles.menuCta}><Image src={arrowTheme} alt="Arrow" fill /></li>
             </ul>
           </div>
