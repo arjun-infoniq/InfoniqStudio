@@ -54,7 +54,7 @@ export default function VideoPortfolio() {
             <div className={styles.videoBox} ref={videoBoxRef}>
               <video
                 className={styles.video}
-                src="/videos/portfolio.mp4" /* put your file in /public/videos/sample.mp4 */
+                src="/videos/about-video.mp4" /* put your file in /public/videos/sample.mp4 */
                 autoPlay
                 muted
                 loop
