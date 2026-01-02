@@ -137,11 +137,11 @@ table {
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+// html,
+// body {
+//   max-width: 100vw;
+//   overflow-x: hidden;
+// }
 
 body {
   color: var(--foreground);
@@ -201,6 +201,7 @@ a {
   position: relative;
   width: fit-content;
   height: 100%;
+  height: 80px;
   .rText {
     position: relative !important;
     height: 80px !important;
@@ -210,7 +211,7 @@ a {
   .rArrow {
     width: auto !important;
     height: 15px !important;
-    top: 47% !important;
+    top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%);
   }
@@ -234,7 +235,7 @@ a {
   font-size: 14px;
   position: relative;
   cursor: pointer;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &::before {
     content: "";
     position: absolute;
@@ -247,7 +248,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 15px;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   &:hover {
     background-color: var(--theme);
@@ -255,4 +256,48 @@ a {
       filter: brightness(0) invert(1);
     }
   }
+}
+
+.scroll-stack {
+  // position: relative;
+  // width: 100%;
+  // max-width: 420px;
+  // margin: 0 auto;
+}
+
+.scroll-stack-card {
+  // position: relative;
+  // height: 260px;
+  // background-color: white;
+  // border-radius: 16px;
+  // padding: 24px;
+  // margin-bottom: 40px;
+  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transform-origin: top center;
+  will-change: transform;
+  &:nth-child(1) {
+    background-image: url("/images/service-shape-1.svg");
+  }
+  &:nth-child(2) {
+    background-image: url("/images/service-shape-2.svg");
+  }
+  &:nth-child(3) {
+    background-image: url("/images/service-shape-3.svg");
+  }
+  &:nth-child(4) {
+    background-image: url("/images/service-shape-1.svg");
+  }
+  &:nth-child(5) {
+    background-image: url("/images/service-shape-2.svg");
+  }
+  &:nth-child(6) {
+    background-image: url("/images/service-shape-3.svg");
+  }
+}
+
+.scroll-stack-end {
+  height: 60vh;
 }

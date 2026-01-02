@@ -6,6 +6,7 @@ import styles from "./page.module.scss";
 // import LiquidEther from "./components/LiquidEther/LiquidEther";
 // import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
 import { useLenis } from "./components/useLenis/useLenis";
+import ScrollStack from "./components/ScrollStack/ScrollStack";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -14,7 +15,15 @@ import "swiper/css/navigation";
 
 // import Image from "next/image";
 import RotateText1 from "../../public/images/rotate-text.svg";
+import RotateText2 from "../../public/icons/rotate-text-dark.svg";
 import RotateArrow from "../../public/icons/arrow-red.svg";
+
+import serviceImage1 from "../../public/images/service-img-1.png";
+import serviceImage2 from "../../public/images/service-img-2.png";
+import serviceImage3 from "../../public/images/service-img-3.png";
+import serviceImage4 from "../../public/images/service-img-4.png";
+import serviceImage5 from "../../public/images/service-img-5.png";
+import serviceImage6 from "../../public/images/service-img-6.png";
 
 import textImage from "../../public/images/text-portfolio.png";
 
@@ -144,11 +153,188 @@ export default function Home() {
             </div>
             <div className={styles.innerBox}>
               <h3>Designing the</h3>
-              <h3>Future <Image src={textImage} alt="Portfolio" fill /></h3>
+              <h3>
+                Future <Image src={textImage} alt="Portfolio" fill />
+              </h3>
               <h3>of Digital</h3>
               <h3>Experiences</h3>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.stackBoxWrapper}>
+        <div className="mainContainer">
+          <ScrollStack>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage1} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2>3D Interactive Websites</h2>
+                  <h3>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText2}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </div>
+              </div>
+            </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage3} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2>3D Interactive Websites</h2>
+                  <h3>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText2}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage4} alt="Service Image" fill />
+                </div>
+              </div>
+            </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage5} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage6} alt="Service Image" fill />
+                </div>
+              </div>
+            </div>
+          </ScrollStack>
         </div>
       </section>
     </>
