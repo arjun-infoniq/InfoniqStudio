@@ -3,9 +3,6 @@
 import styles from "./header.module.scss";
 import Image from "next/image";
 
-
-import Arrow from "../../../public/icons/arrow.svg";
-
 import Logo from "../../../public/images/logo.svg";
 import LogoIcon from "../../../public/images/logo-icon.svg";
 import arrowTheme from "../../../public/icons/arrow-theme.svg";

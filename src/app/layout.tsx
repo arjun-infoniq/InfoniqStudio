@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { Bruno_Ace, Poppins } from 'next/font/google'
 import "./globals.scss";
 import Header from "./header/header.module";
-import LiquidEther from "./components/LiquidEther/LiquidEther";
 
 import Footer from "./footer/footer.module";
 import Loader from "./components/Loader/Loader";
-import Silk from "./components/Silk/Silk";
 
 const brunoAce = Bruno_Ace({
   subsets: ['latin'],
