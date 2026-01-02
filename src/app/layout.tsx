@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Jura } from "next/font/google";
-import "./globals.css";
+import { Bruno_Ace, Poppins } from 'next/font/google'
+import "./globals.scss";
 import Header from "./header/header.module";
-import LiquidEther from "./components/LiquidEther/LiquidEther";
 
 import Footer from "./footer/footer.module";
 import Loader from "./components/Loader/Loader";
-import Silk from "./components/Silk/Silk";
 
-const geistSans = Jura({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+const brunoAce = Bruno_Ace({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bruno',
+  display: 'swap',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Infoniq Studio",
@@ -26,36 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geistSans.className}>
+      <body className={`${poppins.variable} ${brunoAce.variable}`}>
         <Header />
         <Loader />
         {children}
-        <div className="liquidEtherWrapper">
-          {/* <LiquidEther
-          colors={["#FF4C1F", "#FF643D", "#FD8263"]}
-          mouseForce={40}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        /> */}
-          <Silk
-            speed={2}
-            scale={.9}
-            color="#7B7481"
-            noiseIntensity={1.5}
-            rotation={0}
-          />
-        </div>
         <Footer />
       </body>
     </html>
