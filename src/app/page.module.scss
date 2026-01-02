@@ -183,3 +183,54 @@
   }
 }
 // About Section Ends
+
+// Stack Pack
+.stackBoxWrapper {
+  .stackBox {
+    height: 500px;
+    padding: 80px 60px;
+    // background-color: red;
+    // display: block;
+    // &:nth-child(1) {
+    //   background-color: black;
+    // }
+    // &:nth-child(2) {
+    //   background-color: white;
+    // }
+    .contentFlexWrapper {
+      display: flex;
+      gap: 30px;
+      height: 100%;
+      .imgSet {
+        position: relative;
+        width: 60% !important;
+        // height: 353px !important;
+        img {
+          object-fit: cover;
+        }
+      }
+      .contentSet {
+        width: 40%;
+        padding-left: 30px;
+        .light {
+          color: #fff;
+        }
+        h2 {
+          font-family: var(--font-bruno);
+          text-transform: uppercase;
+          font-size: 30px;
+          font-weight: lighter;
+          color: #000;
+        }
+        h3 {
+          font-size: 14px;
+          color: #000;
+          font-weight: 400;
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+// Stack Pack Ends
