@@ -1,12 +1,32 @@
 "use client";
 
-// import Image from "next/image";
-import styles from "./page.module.scss";
-import LiquidEther from "./components/LiquidEther/LiquidEther";
-import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
-import { useLenis } from "./components/useLenis/useLenis";
-
 import Image from "next/image";
+import styles from "./page.module.scss";
+
+// import LiquidEther from "./components/LiquidEther/LiquidEther";
+// import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
+import { useLenis } from "./components/useLenis/useLenis";
+import ScrollStack from "./components/ScrollStack/ScrollStack";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import Image from "next/image";
+import RotateText1 from "../../public/images/rotate-text.svg";
+import RotateText2 from "../../public/icons/rotate-text-dark.svg";
+import RotateArrow from "../../public/icons/arrow-red.svg";
+
+import serviceImage1 from "../../public/images/service-img-1.png";
+import serviceImage2 from "../../public/images/service-img-2.png";
+import serviceImage3 from "../../public/images/service-img-3.png";
+import serviceImage4 from "../../public/images/service-img-4.png";
+import serviceImage5 from "../../public/images/service-img-5.png";
+import serviceImage6 from "../../public/images/service-img-6.png";
+
+import textImage from "../../public/images/text-portfolio.png";
+
 import Portfolio1 from "../../public/images/portfolio-1.png";
 import Portfolio2 from "../../public/images/portfolio-2.png";
 import Portfolio3 from "../../public/images/portfolio-3.png";
@@ -16,184 +36,305 @@ import Portfolio5 from "../../public/images/portfolio-5.png";
 export default function Home() {
   useLenis();
 
-  const images = [
-    "/images/logo-1.svg",
-    "/images/logo-1.svg",
-    "/images/logo-1.svg",
-    "/images/logo-1.svg",
-    "/images/logo-1.svg",
-    "/images/logo-1.svg",
-  ];
+  // const images = [
+  //   "/images/logo-1.svg",
+  //   "/images/logo-1.svg",
+  //   "/images/logo-1.svg",
+  //   "/images/logo-1.svg",
+  //   "/images/logo-1.svg",
+  //   "/images/logo-1.svg",
+  // ];
 
   return (
     <>
-      {/* <div className={styles.liquidEtherWrapper}>
-        <LiquidEther
-          colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        />
-      </div> */}
-
-      <main className={styles.bannerContent}>
+      <section className={styles.heroMainWrapper}>
         <div className="mainContainer">
-          {/* <h2>Infoniq Studio</h2> */}
-          <h3>
-            Crafting Modern <br /> Web Experiences
-          </h3>
-          <h4>
-            Specialized in aesthetic, 3D-driven websites that elevate your
-            brand.
-          </h4>
-          <div className={styles.btnWrapper}>
-            <button>View Our Works</button>
+          <div className={styles.heroWrapper}>
+            <div className={styles.leftSection}>
+              <h2>Crafting Modern Web Experiences</h2>
+              <div className={styles.flexWrapper}>
+                <div className="rotatingText">
+                  <Image
+                    src={RotateText1}
+                    className="rText"
+                    alt="Rotate Text"
+                    fill
+                  />
+                  <Image
+                    src={RotateArrow}
+                    className="rArrow"
+                    alt="Rotate Text"
+                    fill
+                  />
+                </div>
+                <h3>
+                  Specialized in aesthetic, 3D driven websites that elevate your
+                  brand.
+                </h3>
+                <button className="cmnButton">Start Your project</button>
+              </div>
+              <div className={styles.swiperWrapper}>
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  slidesPerView={4}
+                  spaceBetween={20}
+                  loop
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  navigation={{
+                    prevEl: "#Prev",
+                    nextEl: "#Next",
+                  }}
+                  className={styles.heroSlider}
+                >
+                  <SwiperSlide>
+                    <Image src={Portfolio1} alt="Slide 1" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src={Portfolio2} alt="Slide 2" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src={Portfolio3} alt="Slide 3" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src={Portfolio4} alt="Slide 4" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src={Portfolio5} alt="Slide 5" fill />
+                  </SwiperSlide>
+                </Swiper>
+                <div className={styles.swiperBottom}>
+                  <div className={styles.leftSet}>
+                    <h3>Featured projects</h3>
+                    <div className={styles.customNav}>
+                      <button className={styles.customPrev} id="Prev"></button>
+                      <button className={styles.customNext} id="Next"></button>
+                    </div>
+                  </div>
+                  <div>
+                    <button className={styles.exploreBtn}>Explore Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.rightSection}></div>
           </div>
         </div>
-      </main>
+      </section>
 
-      <section className={styles.welcomeScreen}>
+      <section className={styles.mainAboutWrapper}>
         <div className="mainContainer">
-          <div className={styles.welcomeSplit}>
-            <div>
+          <h4>ABOUT US</h4>
+          <div className={styles.aboutFlex}>
+            <div className={styles.innerBox}>
               <h2>
-                We are a design-first digital studio, blending creativity and
-                technology to craft **modern, aesthetic, and interactive
-                websites**. Our passion? Turning ideas into stunning, functional
-                experiences that captivate users. We are a design-first digital
-                studio, blending creativity and
+                Infoniq is a modern software design and development studio
+                crafting cutting-edge 3D interactive websites, mobile apps, and
+                brand identities. We combine bold creativity with advanced
+                engineering to deliver digital experiences that feel premium,
+                fast, and future-ready.
               </h2>
               <h2>
-                technology to craft **modern, aesthetic, and interactive
-                websites**. Our passion? Turning ideas into stunning, functional
-                experiences that captivate users.
+                Our approach is simple create products that are visually
+                stunning, easy to use, and built for real-world business
+                results.
               </h2>
             </div>
-            <div>
+            <div className={styles.innerBox}>
+              <video autoPlay muted loop playsInline preload="auto">
+                <source src="/videos/about-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className={styles.innerBox}>
+              <h3>Designing the</h3>
               <h3>
-                technology to craft **modern, aesthetic, and interactive
-                websites**. Our passion? Turning ideas into stunning, functional
-                experiences that captivate users.
+                Future <Image src={textImage} alt="Portfolio" fill />
               </h3>
+              <h3>of Digital</h3>
+              <h3>Experiences</h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* <section className={styles.videoPortfolio}>
-        <video width="100%" playsInline preload="auto" muted>
-          <source src="/videos/portfolio.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </section> */}
-
-      <VideoPortfolio />
-
-      {/* <section className={styles.OurServices}>
+      <section className={styles.stackBoxWrapper}>
         <div className="mainContainer">
-          <div>
-            {images.map((src, index) => (
-              <Image
-                key={index}
-                src={src}
-                alt={`Image ${index + 1}`}
-                width={100}
-                height={100}
-              />
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      <section className={styles.portfolioMainWrapper}>
-        <div className="mainContainer">
-          <div className={styles.portfolioHead}>
-            <h3>Turning Vision Into Voltage</h3>
-            <button>See all works</button>
-          </div>
-          <div className={styles.portfolioFlex}>
-            <div className={styles.portfolioBox}>
-              <div className={styles.imgWrapper}>
-                <Image src={Portfolio1} alt="Portfolio" fill />
+          <ScrollStack>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage1} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2>3D Interactive Websites</h2>
+                  <h3>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText2}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
               </div>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Development</li>
-              </ul>
-              <h2>Break A Leg</h2>
-              <p>
-                Building a vibrant website that connects audiences with live
-                theatre shows—making culture more accessible and engaging.
-              </p>
             </div>
-            <div className={styles.portfolioBox}>
-              <div className={styles.imgWrapper}>
-                <Image src={Portfolio2} alt="Portfolio" fill />
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </div>
               </div>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Development</li>
-              </ul>
-              <h2>Break A Leg</h2>
-              <p>
-                Building a vibrant website that connects audiences with live
-                theatre shows—making culture more accessible and engaging.
-              </p>
             </div>
-            <div className={styles.portfolioBox}>
-              <div className={styles.imgWrapper}>
-                <Image src={Portfolio3} alt="Portfolio" fill />
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage3} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
               </div>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Development</li>
-              </ul>
-              <h2>Break A Leg</h2>
-              <p>
-                Building a vibrant website that connects audiences with live
-                theatre shows—making culture more accessible and engaging.
-              </p>
             </div>
-            <div className={styles.portfolioBox}>
-              <div className={styles.imgWrapper}>
-                <Image src={Portfolio4} alt="Portfolio" fill />
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2>3D Interactive Websites</h2>
+                  <h3>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText2}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage4} alt="Service Image" fill />
+                </div>
               </div>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Development</li>
-              </ul>
-              <h2>Break A Leg</h2>
-              <p>
-                Building a vibrant website that connects audiences with live
-                theatre shows—making culture more accessible and engaging.
-              </p>
             </div>
-            <div className={styles.portfolioBox}>
-              <div className={styles.imgWrapper}>
-                <Image src={Portfolio5} alt="Portfolio" fill />
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage5} alt="Service Image" fill />
+                </div>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
               </div>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Development</li>
-              </ul>
-              <h2>Break A Leg</h2>
-              <p>
-                Building a vibrant website that connects audiences with live
-                theatre shows—making culture more accessible and engaging.
-              </p>
             </div>
-          </div>
+            <div className={styles.stackBox}>
+              <div className={styles.contentFlexWrapper}>
+                <div className={styles.contentSet}>
+                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h3 className={styles.light}>
+                    Immersive, high-performance websites built with advanced 3D
+                    visuals, smooth animations, and modern UI.
+                  </h3>
+                  <div className="rotatingText">
+                    <Image
+                      src={RotateText1}
+                      className="rText"
+                      alt="Rotate Text"
+                      fill
+                    />
+                    <Image
+                      src={RotateArrow}
+                      className="rArrow"
+                      alt="Rotate Text"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className={styles.imgSet}>
+                  <Image src={serviceImage6} alt="Service Image" fill />
+                </div>
+              </div>
+            </div>
+          </ScrollStack>
         </div>
       </section>
     </>
