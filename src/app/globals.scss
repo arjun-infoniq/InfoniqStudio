@@ -258,7 +258,37 @@ a {
   }
 }
 
+.cmnTagHeading {
+  position: relative;
+  padding-left: 20px;
+  font-weight: lighter;
+  font-family: var(--font-bruno);
+  text-transform: uppercase;
+  font-size: 12px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 10px;
+    height: 20px;
+    background-image: url("/icons/triangle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  }
+}
+
+.cmnMainHeading {
+  font-family: var(--font-bruno);
+  text-transform: uppercase;
+  align-items: center;
+  max-width: 700px;
+  font-size: 40px;
+}
+
 .scroll-stack {
+  height: 100vh !important;
   // position: relative;
   // width: 100%;
   // max-width: 420px;
@@ -298,6 +328,6 @@ a {
   }
 }
 
-.scroll-stack-end {
-  height: 60vh;
-}
+// .scroll-stack-end {
+//   height: 60vh;
+// }
