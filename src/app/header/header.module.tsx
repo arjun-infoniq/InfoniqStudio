@@ -47,7 +47,7 @@ export default function Header() {
             </ul>
           </div>
           <div className={styles.ctaWrapper}>
-            <button>Start a project</button>
+            <button>Start A Project</button>
           </div>
         </div>
       </div>
