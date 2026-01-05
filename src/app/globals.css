@@ -137,11 +137,11 @@ table {
   }
 }
 
-// html,
-// body {
-//   max-width: 100vw;
-//   overflow-x: hidden;
-// }
+/* html,
+ body {
+   max-width: 100vw;
+   overflow-x: hidden;
+ } */
 
 body {
   color: var(--foreground);
@@ -202,31 +202,34 @@ a {
   width: fit-content;
   height: 100%;
   height: 80px;
-  .rText {
-    position: relative !important;
-    height: 80px !important;
-    width: auto !important;
-    animation: spin 15s linear infinite;
-  }
-  .rArrow {
-    width: auto !important;
-    height: 15px !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%);
-  }
 }
 
-// .rotate {
-//   animation: spin 15s linear infinite;
-// }
-
+@media screen and (max-width: 991px) {
+  .stackPage.rotatingText {
+    position: absolute;
+    z-index: 1;
+    top: 212px;
+    left: 20px;
+  }
+}
+.rotatingText .rText {
+  position: relative !important;
+  height: 80px !important;
+  width: auto !important;
+  animation: spin 15s linear infinite;
+}
+.rotatingText .rArrow {
+  width: auto !important;
+  height: 15px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
-
 .cmnButton {
   background-color: #000;
   color: #fff;
@@ -236,28 +239,27 @@ a {
   position: relative;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 18px;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    background-image: url("/icons/arrow-red.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 15px;
-    transition: all 0.4s ease-in-out;
-  }
-  &:hover {
-    background-color: var(--theme);
-    &::before {
-      filter: brightness(0) invert(1);
-    }
-  }
 }
-
+.cmnButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-image: url("/icons/arrow-red.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  transition: all 0.4s ease-in-out;
+}
+.cmnButton:hover {
+  background-color: var(--theme);
+}
+.cmnButton:hover::before {
+  filter: brightness(0) invert(1);
+}
 .cmnTagHeading {
   position: relative;
   padding-left: 20px;
@@ -265,20 +267,19 @@ a {
   font-family: var(--font-bruno);
   text-transform: uppercase;
   font-size: 12px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 10px;
-    height: 20px;
-    background-image: url("/icons/triangle.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px;
-  }
 }
-
+.cmnTagHeading::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 10px;
+  height: 20px;
+  background-image: url("/icons/triangle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px;
+}
 .cmnMainHeading {
   font-family: var(--font-bruno);
   text-transform: uppercase;
@@ -286,48 +287,31 @@ a {
   max-width: 700px;
   font-size: 40px;
 }
-
 .scroll-stack {
   height: 100vh !important;
-  // position: relative;
-  // width: 100%;
-  // max-width: 420px;
-  // margin: 0 auto;
 }
-
 .scroll-stack-card {
-  // position: relative;
-  // height: 260px;
-  // background-color: white;
-  // border-radius: 16px;
-  // padding: 24px;
-  // margin-bottom: 40px;
-  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  background-position: center;
+  background-position: top right;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   transform-origin: top center;
   will-change: transform;
-  &:nth-child(1) {
-    background-image: url("/images/service-shape-1.svg");
-  }
-  &:nth-child(2) {
-    background-image: url("/images/service-shape-2.svg");
-  }
-  &:nth-child(3) {
-    background-image: url("/images/service-shape-3.svg");
-  }
-  &:nth-child(4) {
-    background-image: url("/images/service-shape-1.svg");
-  }
-  &:nth-child(5) {
-    background-image: url("/images/service-shape-2.svg");
-  }
-  &:nth-child(6) {
-    background-image: url("/images/service-shape-3.svg");
-  }
 }
-
-// .scroll-stack-end {
-//   height: 60vh;
-// }
+.scroll-stack-card:nth-child(1) {
+  background-image: url("/images/service-shape-1.svg");
+}
+.scroll-stack-card:nth-child(2) {
+  background-image: url("/images/service-shape-2.svg");
+}
+.scroll-stack-card:nth-child(3) {
+  background-image: url("/images/service-shape-3.svg");
+}
+.scroll-stack-card:nth-child(4) {
+  background-image: url("/images/service-shape-1.svg");
+}
+.scroll-stack-card:nth-child(5) {
+  background-image: url("/images/service-shape-2.svg");
+}
+.scroll-stack-card:nth-child(6) {
+  background-image: url("/images/service-shape-3.svg");
+}

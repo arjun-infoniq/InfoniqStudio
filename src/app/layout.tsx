@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bruno_Ace, Poppins } from 'next/font/google'
-import "./globals.scss";
+import "./globals.css";
 import Header from "./header/header.module";
 
 import Footer from "./footer/footer.module";

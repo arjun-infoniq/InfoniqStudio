@@ -8,6 +8,8 @@ import styles from "./page.module.scss";
 import { useLenis } from "./components/useLenis/useLenis";
 import ScrollStack from "./components/ScrollStack/ScrollStack";
 
+import { Accordion, AccordionItem } from "@heroui/accordion";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -77,7 +79,12 @@ export default function Home() {
               <div className={styles.swiperWrapper}>
                 <Swiper
                   modules={[Autoplay, Navigation]}
-                  slidesPerView={4}
+                  slidesPerView={2.5}
+                  breakpoints={{
+                    991: {
+                      slidesPerView: 4,
+                    },
+                  }}
                   spaceBetween={20}
                   loop
                   autoplay={{
@@ -183,7 +190,7 @@ export default function Home() {
                     Immersive, high-performance websites built with advanced 3D
                     visuals, smooth animations, and modern UI.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText2}
                       className="rText"
@@ -211,7 +218,7 @@ export default function Home() {
                     Fast, scalable, and secure web applications engineered for
                     real-world business needs.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -245,7 +252,7 @@ export default function Home() {
                     Intuitive Android and iOS apps designed for seamless user
                     experiences and strong performance.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -273,7 +280,7 @@ export default function Home() {
                     Modern brand identities that enhance recognition, build
                     trust, and differentiate your business.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText2}
                       className="rText"
@@ -307,7 +314,7 @@ export default function Home() {
                     User-focused design solutions blending aesthetics, clarity,
                     and smooth interaction flows.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -335,7 +342,7 @@ export default function Home() {
                     High-conversion, visually striking landing pages ideal for
                     launches, campaigns, and marketing.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -462,6 +469,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* <div className="bg-red-500 text-white p-6 text-2xl">
+        Tailwind is working 🎉
+      </div> */}
     </>
   );
 }
