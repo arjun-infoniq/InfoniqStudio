@@ -8,6 +8,8 @@ import styles from "./page.module.scss";
 import { useLenis } from "./components/useLenis/useLenis";
 import ScrollStack from "./components/ScrollStack/ScrollStack";
 
+import { Accordion, AccordionItem } from "@heroui/accordion";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -17,6 +19,7 @@ import "swiper/css/navigation";
 import RotateText1 from "../../public/images/rotate-text.svg";
 import RotateText2 from "../../public/icons/rotate-text-dark.svg";
 import RotateArrow from "../../public/icons/arrow-red.svg";
+import Blender from "../../public/icons/blender.svg";
 
 import serviceImage1 from "../../public/images/service-img-1.png";
 import serviceImage2 from "../../public/images/service-img-2.png";
@@ -76,7 +79,12 @@ export default function Home() {
               <div className={styles.swiperWrapper}>
                 <Swiper
                   modules={[Autoplay, Navigation]}
-                  slidesPerView={4}
+                  slidesPerView={2.5}
+                  breakpoints={{
+                    991: {
+                      slidesPerView: 4,
+                    },
+                  }}
                   spaceBetween={20}
                   loop
                   autoplay={{
@@ -130,7 +138,7 @@ export default function Home() {
 
       <section className={styles.mainAboutWrapper}>
         <div className="mainContainer">
-          <h4>ABOUT US</h4>
+          <h4 className="cmnTagHeading">SERVICES</h4>
           <div className={styles.aboutFlex}>
             <div className={styles.innerBox}>
               <h2>
@@ -165,8 +173,13 @@ export default function Home() {
 
       <section className={styles.stackBoxWrapper}>
         <div className="mainContainer">
+          <h4 className="cmnTagHeading">ABOUT US</h4>
+          <h5 className="cmnMainHeading">What We Create</h5>
           <ScrollStack>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox1}>
+                <h4>3d websites</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
                   <Image src={serviceImage1} alt="Service Image" fill />
@@ -177,7 +190,7 @@ export default function Home() {
                     Immersive, high-performance websites built with advanced 3D
                     visuals, smooth animations, and modern UI.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText2}
                       className="rText"
@@ -195,14 +208,17 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox2}>
+                <h4>Web development</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.contentSet}>
-                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h2 className={styles.light}>Custom Web Development</h2>
                   <h3 className={styles.light}>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
+                    Fast, scalable, and secure web applications engineered for
+                    real-world business needs.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -223,17 +239,20 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox3}>
+                <h4>app development</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
                   <Image src={serviceImage3} alt="Service Image" fill />
                 </div>
                 <div className={styles.contentSet}>
-                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h2 className={styles.light}>Mobile App Development</h2>
                   <h3 className={styles.light}>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
+                    Intuitive Android and iOS apps designed for seamless user
+                    experiences and strong performance.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -251,14 +270,17 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox1}>
+                <h4>branding</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.contentSet}>
-                  <h2>3D Interactive Websites</h2>
+                  <h2>Branding & Identity Design</h2>
                   <h3>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
+                    Modern brand identities that enhance recognition, build
+                    trust, and differentiate your business.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText2}
                       className="rText"
@@ -279,17 +301,20 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox2}>
+                <h4>ui/ux design</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
                   <Image src={serviceImage5} alt="Service Image" fill />
                 </div>
                 <div className={styles.contentSet}>
-                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h2 className={styles.light}>UI/UX Design</h2>
                   <h3 className={styles.light}>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
+                    User-focused design solutions blending aesthetics, clarity,
+                    and smooth interaction flows.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -307,14 +332,17 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.stackBox}>
+              <div className={styles.tagBox3}>
+                <h4>product landing</h4>
+              </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.contentSet}>
-                  <h2 className={styles.light}>3D Interactive Websites</h2>
+                  <h2 className={styles.light}>Product Landing Pages</h2>
                   <h3 className={styles.light}>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
+                    High-conversion, visually striking landing pages ideal for
+                    launches, campaigns, and marketing.
                   </h3>
-                  <div className="rotatingText">
+                  <div className="stackPage rotatingText">
                     <Image
                       src={RotateText1}
                       className="rText"
@@ -337,6 +365,114 @@ export default function Home() {
           </ScrollStack>
         </div>
       </section>
+
+      <section className={styles.mainPortfolioWrapper}>
+        <div className={styles.portfolioParentBox}>
+          <div className="mainContainer">
+            <div className={styles.portfolioheader}>
+              <h2 className="cmnMainHeading">Crafted With Vision</h2>
+              <h3>delivered with precision</h3>
+            </div>
+            <div className={styles.portfolioFlex1}>
+              <div className={styles.bigBox}>
+                <a href="#">
+                  <video
+                    src="/videos/portfolio-video-1.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  ></video>
+                </a>
+              </div>
+              <div className={styles.smallBox}>
+                <a href="#">
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </a>
+              </div>
+            </div>
+            <div className={styles.portfolioFlex1}>
+              <div className={styles.smallBox}>
+                <a href="#">
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </a>
+              </div>
+              <div className={styles.bigBox}>
+                <a href="#">
+                  <video
+                    src="/videos/portfolio-video-2.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  ></video>
+                </a>
+              </div>
+            </div>
+            <div className={styles.portfolioFlex1}>
+              <div className={styles.bigBox}>
+                <a href="#">
+                  <Image src={serviceImage3} alt="Service Image" fill />
+                </a>
+              </div>
+              <div className={styles.smallBox}>
+                <a href="#">
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </a>
+              </div>
+            </div>
+            <div className={styles.portfolioFlex1}>
+              <div className={styles.smallBox}>
+                <a href="#">
+                  <Image src={serviceImage2} alt="Service Image" fill />
+                </a>
+              </div>
+              <div className={styles.bigBox}>
+                <a href="#">
+                  <Image src={serviceImage3} alt="Service Image" fill />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.whatMattersWrapper}>
+        <div className="mainContainer">
+          <div className={styles.videoHeader}>
+            <h4 className="cmnTagHeading">Expertise</h4>
+            <div>
+              <h2>
+                <span>Specialized in </span>What
+              </h2>
+              <h2>Matters</h2>
+            </div>
+          </div>
+          <div className={styles.videoWrapper}>
+            <video
+              src="/videos/3d-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></video>
+            <div className={styles.blenderTag}>
+              <Image src={Blender} className="rText" alt="Blender" fill />
+            </div>
+            <h3>3D Interactive Web Experiences</h3>
+            <h5>
+              We design and develop immersive 3D-powered websites that combine
+              storytelling, motion, and performance. Every experience is crafted
+              to engage users, communicate value, and leave a lasting
+              impression.
+            </h5>
+          </div>
+        </div>
+      </section>
+
+      {/* <div className="bg-red-500 text-white p-6 text-2xl">
+        Tailwind is working 🎉
+      </div> */}
     </>
   );
 }

@@ -5,7 +5,6 @@ import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollStackProps {
@@ -15,8 +14,8 @@ interface ScrollStackProps {
 
 export default function ScrollStack({
   children,
-  // scaleStep = 0.03,
-}: ScrollStackProps) {
+}: // scaleStep = 0.03,
+ScrollStackProps) {
   const stackRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -36,9 +35,9 @@ export default function ScrollStack({
             index === cards.length - 1
               ? () => `+=${window.innerHeight * 0.6}`
               : "bottom 20%",
-          scrub: 0.5,
+          scrub: 0.2,
           pin: stackRef.current,
-          pinSpacing: false,
+         pinSpacing: true
         },
       });
     });
