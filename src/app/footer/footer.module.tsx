@@ -39,13 +39,6 @@ export default function Footer() {
       <div className="mainContainer">
         <div className={styles.footerHead}>
           <div className={styles.leftSet}>
-            <video
-              src="/videos/logo-rotate.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            ></video>
             <div>
               <h2>INFONIQ STUDIO</h2>
               <h3>
@@ -64,16 +57,36 @@ export default function Footer() {
             </ul>
             <ul className={styles.socialWrapper}>
               <li>
-                <Image src={Social1} alt="Instagram" fill />
+                <a
+                  href="https://www.instagram.com/infoniq.studio?igsh=MXE5Y2prMGp6Z3V1cw=="
+                  target="_blank"
+                >
+                  <Image src={Social1} alt="Instagram" fill />
+                </a>
               </li>
               <li>
-                <Image src={Social2} alt="Instagram" fill />
+                <a
+                  href="https://www.linkedin.com/company/infoniqstudio"
+                  target="_blank"
+                >
+                  <Image src={Social2} alt="LinkedIn" fill />
+                </a>
               </li>
               <li>
-                <Image src={Social3} alt="Instagram" fill />
+                <a
+                  href="https://www.behance.net/infoniqstudio"
+                  target="_blank"
+                >
+                  <Image src={Social3} alt="Behance" fill />
+                </a>
               </li>
               <li>
-                <Image src={Social4} alt="Instagram" fill />
+                <a
+                  href="https://dribbble.com/infoniqstudio"
+                  target="_blank"
+                >
+                  <Image src={Social4} alt="Dribbble" fill />
+                </a>
               </li>
             </ul>
           </div>
