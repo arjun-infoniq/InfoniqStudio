@@ -1,3 +1,21 @@
+
+/* Add any other global styles below */
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --theme: #d92b00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
 html,
 body,
 div,
@@ -123,19 +141,9 @@ table {
 
 /* Reset css end */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
 
-  --theme: #d92b00;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 /* html,
  body {

@@ -35,6 +35,8 @@ import Portfolio2 from "../../public/images/portfolio-2.png";
 import Portfolio3 from "../../public/images/portfolio-3.png";
 import Portfolio4 from "../../public/images/portfolio-4.png";
 import Portfolio5 from "../../public/images/portfolio-5.png";
+import Portfolio6 from "../../public/images/portfolio-6.png";
+import Portfolio7 from "../../public/images/portfolio-7.png";
 
 export default function Home() {
   useLenis();
@@ -138,7 +140,7 @@ export default function Home() {
 
       <section className={styles.mainAboutWrapper}>
         <div className="mainContainer">
-          <h4 className="cmnTagHeading">SERVICES</h4>
+          <h4 className="cmnTagHeading">About Us</h4>
           <div className={styles.aboutFlex}>
             <div className={styles.innerBox}>
               <h2>
@@ -173,7 +175,7 @@ export default function Home() {
 
       <section className={styles.stackBoxWrapper}>
         <div className="mainContainer">
-          <h4 className="cmnTagHeading">ABOUT US</h4>
+          <h4 className="cmnTagHeading">Services</h4>
           <h5 className="cmnMainHeading">What We Create</h5>
           <ScrollStack>
             <div className={styles.stackBox}>
@@ -424,12 +426,12 @@ export default function Home() {
             <div className={styles.portfolioFlex1}>
               <div className={styles.smallBox}>
                 <a href="#">
-                  <Image src={serviceImage2} alt="Service Image" fill />
+                  <Image src={Portfolio6} alt="Service Image" fill />
                 </a>
               </div>
               <div className={styles.bigBox}>
                 <a href="#">
-                  <Image src={serviceImage3} alt="Service Image" fill />
+                  <Image src={Portfolio7} alt="Portfolio Image" fill />
                 </a>
               </div>
             </div>
