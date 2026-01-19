@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Bruno_Ace, Poppins } from 'next/font/google'
 import "./globals.css";
-import Header from "./header/header.module";
-
 import Footer from "./footer/footer.module";
+import Header from "./header/header.module";
 import Loader from "./components/Loader/Loader";
+
 
 const brunoAce = Bruno_Ace({
   subsets: ['latin'],
@@ -22,8 +22,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Infoniq Studio",
-  description:
-    "Crafting modern, aesthetic, and interactive digital experiences with a blend of design and technology.",
+  description: "Crafting modern, aesthetic, and interactive digital experiences with a blend of design and technology.",
 };
 
 export default function RootLayout({
@@ -33,9 +32,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${brunoAce.variable}`}>
-        <Header />
-        <Loader />
+      <body
+        className={`${poppins.variable} ${brunoAce.variable} antialiased dark`}
+      >
+         <Header />
+         <Loader />
         {children}
         <Footer />
       </body>

@@ -78,6 +78,9 @@
         text-transform: uppercase;
         font-weight: 300;
         font-size: 14px;
+        @media screen and (max-width: 991px) {
+          display: none;
+        }
       }
       .customNav {
         display: flex;
@@ -306,8 +309,8 @@
 .mainPortfolioWrapper {
   padding: 100px 0;
   padding: 20px;
+  background-color: var(--background);
   .portfolioParentBox {
-    background-color: #f4f4f4;
     padding: 100px 0;
     .portfolioheader {
       margin-bottom: 60px;
@@ -315,8 +318,14 @@
       display: flex;
       align-items: end;
       gap: 20px;
+      @media screen and (max-width: 991px) {
+        flex-direction: column;
+      }
       h2 {
-        max-width: 305px;
+        max-width: 460px;
+        line-height: 1.2;
+        color: #fff;
+        font-size: 60px;
       }
       h3 {
         font-weight: 400;
@@ -324,16 +333,16 @@
       }
     }
     .portfolioFlex1 {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
       margin-bottom: 20px;
       @media screen and (max-width: 991px) {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
-      .bigBox {
+      .innerBox {
         position: relative;
         height: 400px;
-        width: 60%;
         border-radius: 5px;
         overflow: hidden;
         @media screen and (max-width: 991px) {
@@ -343,7 +352,7 @@
         a {
           img {
             object-fit: cover;
-            object-position: left;
+            object-position: left top;
           }
           video {
             width: 100%;
@@ -351,26 +360,28 @@
             object-fit: cover;
           }
         }
-      }
-      .smallBox {
-        position: relative;
-        height: 400px;
-        width: 40%;
-        border-radius: 5px;
-        overflow: hidden;
-        @media screen and (max-width: 991px) {
-          width: 100%;
-          height: 200px;
+        &:nth-child(even) {
+          position: relative;
+          top: 40px;
         }
-        a {
-          img {
-            object-fit: cover;
-            object-position: left;
-          }
-          video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .tagBox {
+          background-image: url("/images/tab-back-1.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 230px;
+          width: fit-content;
+          padding: 0px 0px 7px 30px;
+          position: absolute;
+          top: 0;
+          right: 10%;
+          h4 {
+            font-family: var(--font-bruno);
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 200px;
+            padding-left: 30px;
           }
         }
       }

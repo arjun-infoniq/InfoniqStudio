@@ -3,23 +3,25 @@
 import { useEffect, useState } from "react";
 import styles from "./Loader.module.scss"; // SCSS module import
 
-import Logo from "../../../../public/images/loader.svg";
 import Image from "next/image";
 
 export default function Loader() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !localStorage.getItem("hasVisited");
+  });
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
+    if (!loading) return;
 
-    if (!hasVisited) {
-      localStorage.setItem("hasVisited", "true");
-      const timer = setTimeout(() => setLoading(false), 2000); // 2s
-      return () => clearTimeout(timer);
-    } else {
-      setLoading(false); // Skip loader if already visited
-    }
-  }, []);
+    localStorage.setItem("hasVisited", "true");
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [loading]);
 
   if (!loading) return null;
 
@@ -30,7 +32,7 @@ export default function Loader() {
         <span></span>
         <span></span> */}
         <div className={styles.logoWrapper}>
-            <Image src={Logo} alt="Portfolio" fill />
+            <Image src="/images/loader.svg" alt="Portfolio" fill />
           </div>
       </div>
     </div>
