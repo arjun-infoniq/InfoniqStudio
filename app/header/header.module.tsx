@@ -3,10 +3,6 @@
 import styles from "./header.module.scss";
 import Image from "next/image";
 
-import Logo from "../../../public/images/logo.svg";
-import LogoIcon from "../../../public/images/logo-icon.svg";
-import arrowTheme from "../../../public/icons/arrow-theme.svg";
-
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -31,20 +27,20 @@ export default function Header() {
       <div className="mainContainer">
         <div className={styles.navFlex}>
           <div className={styles.logoWrapper}>
-            <Image src={Logo} alt="Logo" fill />
+            <Image src="/images/logo.svg" alt="Logo" fill />
           </div>
           <div className={styles.menuWrapper}>
             <ul>
               <li className={styles.menuLogo}>
-                <Image src={LogoIcon} alt="Logo" fill />
+                <Image src="/images/logo-icon.svg" alt="Logo" fill />
               </li>
               <li className={styles.navItem}>Home</li>
               <li className={styles.navItem}>About</li>
               <li className={styles.navItem}>Services</li>
               <li className={styles.navItem}>Portfolio</li>
-              <li className={styles.navItem}>Staging</li>
+              <li className={styles.navItem}>Contact Us</li>
               <li className={styles.menuCta}>
-                <Image src={arrowTheme} alt="Arrow" fill />
+                <Image src="/icons/arrow-theme.svg" alt="Arrow" fill />
               </li>
             </ul>
           </div>
