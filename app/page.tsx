@@ -2,54 +2,15 @@
 
 import Image from "next/image";
 import styles from "./page.module.scss";
-
-// import LiquidEther from "./components/LiquidEther/LiquidEther";
-// import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
-import { useLenis } from "./components/useLenis/useLenis";
-import ScrollStack from "./components/ScrollStack/ScrollStack";
-
-import { Accordion, AccordionItem } from "@heroui/accordion";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
-// import Image from "next/image";
-import RotateText1 from "../../public/images/rotate-text.svg";
-import RotateText2 from "../../public/icons/rotate-text-dark.svg";
-import RotateArrow from "../../public/icons/arrow-red.svg";
-import Blender from "../../public/icons/blender.svg";
-
-import serviceImage1 from "../../public/images/service-img-1.png";
-import serviceImage2 from "../../public/images/service-img-2.png";
-import serviceImage3 from "../../public/images/service-img-3.png";
-import serviceImage4 from "../../public/images/service-img-4.png";
-import serviceImage5 from "../../public/images/service-img-5.png";
-import serviceImage6 from "../../public/images/service-img-6.png";
-
-import textImage from "../../public/images/text-portfolio.png";
-
-import Portfolio1 from "../../public/images/portfolio-1.png";
-import Portfolio2 from "../../public/images/portfolio-2.png";
-import Portfolio3 from "../../public/images/portfolio-3.png";
-import Portfolio4 from "../../public/images/portfolio-4.png";
-import Portfolio5 from "../../public/images/portfolio-5.png";
-import Portfolio6 from "../../public/images/portfolio-6.png";
-import Portfolio7 from "../../public/images/portfolio-7.png";
+import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
+import { Autoplay, Navigation } from "swiper/modules";
+import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
+import ScrollStack from "./components/ScrollStack/ScrollStack";
 
 export default function Home() {
-  useLenis();
-
-  // const images = [
-  //   "/images/logo-1.svg",
-  //   "/images/logo-1.svg",
-  //   "/images/logo-1.svg",
-  //   "/images/logo-1.svg",
-  //   "/images/logo-1.svg",
-  //   "/images/logo-1.svg",
-  // ];
-
   return (
     <>
       <section className={styles.heroMainWrapper}>
@@ -60,13 +21,13 @@ export default function Home() {
               <div className={styles.flexWrapper}>
                 <div className="rotatingText">
                   <Image
-                    src={RotateText1}
+                    src="/images/rotate-text.svg"
                     className="rText"
                     alt="Rotate Text"
                     fill
                   />
                   <Image
-                    src={RotateArrow}
+                    src="/icons/arrow-red.svg"
                     className="rArrow"
                     alt="Rotate Text"
                     fill
@@ -100,23 +61,23 @@ export default function Home() {
                   className={styles.heroSlider}
                 >
                   <SwiperSlide>
-                    <Image src={Portfolio1} alt="Slide 1" fill />
+                    <Image src="/images/portfolio-1.png" alt="Slide 1" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src={Portfolio2} alt="Slide 2" fill />
+                    <Image src="/images/portfolio-2.png" alt="Slide 2" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src={Portfolio3} alt="Slide 3" fill />
+                    <Image src="/images/portfolio-3.png" alt="Slide 3" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src={Portfolio4} alt="Slide 4" fill />
+                    <Image src="/images/portfolio-4.png" alt="Slide 4" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src={Portfolio5} alt="Slide 5" fill />
+                    <Image src="/images/portfolio-5.png" alt="Slide 5" fill />
                   </SwiperSlide>
                 </Swiper>
                 <div className={styles.swiperBottom}>
@@ -164,7 +125,8 @@ export default function Home() {
             <div className={styles.innerBox}>
               <h3>Designing the</h3>
               <h3>
-                Future <Image src={textImage} alt="Portfolio" fill />
+                Future{" "}
+                <Image src="/images/text-portfolio.png" alt="Portfolio" fill />
               </h3>
               <h3>of Digital</h3>
               <h3>Experiences</h3>
@@ -184,7 +146,11 @@ export default function Home() {
               </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage1} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-1.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
                 <div className={styles.contentSet}>
                   <h2>3D Interactive Websites</h2>
@@ -194,13 +160,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText2}
+                      src="/icons/rotate-text-dark.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -222,13 +188,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText1}
+                      src="/images/rotate-text.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -236,7 +202,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage2} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-2.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
               </div>
             </div>
@@ -246,7 +216,11 @@ export default function Home() {
               </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage3} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-3.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
                 <div className={styles.contentSet}>
                   <h2 className={styles.light}>Mobile App Development</h2>
@@ -256,13 +230,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText1}
+                      src="/images/rotate-text.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -284,13 +258,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText2}
+                      src="/icons/rotate-text-dark.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -298,7 +272,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage4} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-4.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
               </div>
             </div>
@@ -308,7 +286,11 @@ export default function Home() {
               </div>
               <div className={styles.contentFlexWrapper}>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage5} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-5.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
                 <div className={styles.contentSet}>
                   <h2 className={styles.light}>UI/UX Design</h2>
@@ -318,13 +300,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText1}
+                      src="/images/rotate-text.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -346,13 +328,13 @@ export default function Home() {
                   </h3>
                   <div className="stackPage rotatingText">
                     <Image
-                      src={RotateText1}
+                      src="/images/rotate-text.svg"
                       className="rText"
                       alt="Rotate Text"
                       fill
                     />
                     <Image
-                      src={RotateArrow}
+                      src="/icons/arrow-red.svg"
                       className="rArrow"
                       alt="Rotate Text"
                       fill
@@ -360,13 +342,19 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.imgSet}>
-                  <Image src={serviceImage6} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-6.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </div>
               </div>
             </div>
           </ScrollStack>
         </div>
       </section>
+
+      
 
       <section className={styles.mainPortfolioWrapper}>
         <div className={styles.portfolioParentBox}>
@@ -376,7 +364,10 @@ export default function Home() {
               <h3>delivered with precision</h3>
             </div>
             <div className={styles.portfolioFlex1}>
-              <div className={styles.bigBox}>
+              <div className={styles.innerBox}>
+                <div className={styles.tagBox}>
+                <h4>UI/UX DESIGN</h4>
+              </div>
                 <a href="#">
                   <video
                     src="/videos/portfolio-video-1.mp4"
@@ -387,22 +378,19 @@ export default function Home() {
                   ></video>
                 </a>
               </div>
-              <div className={styles.smallBox}>
+              <div className={styles.innerBox}>
                 <a href="#">
-                  <Image src={serviceImage2} alt="Service Image" fill />
+                  <Image
+                    src="/images/service-img-2.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </a>
               </div>
-            </div>
-            <div className={styles.portfolioFlex1}>
-              <div className={styles.smallBox}>
-                <a href="#">
-                  <Image src={serviceImage2} alt="Service Image" fill />
-                </a>
-              </div>
-              <div className={styles.bigBox}>
+              <div className={styles.innerBox}>
                 <a href="#">
                   <video
-                    src="/videos/portfolio-video-2.mp4"
+                    src="/videos/portfolio-video-1.mp4"
                     autoPlay
                     loop
                     muted
@@ -410,28 +398,13 @@ export default function Home() {
                   ></video>
                 </a>
               </div>
-            </div>
-            <div className={styles.portfolioFlex1}>
-              <div className={styles.bigBox}>
+              <div className={styles.innerBox}>
                 <a href="#">
-                  <Image src={serviceImage3} alt="Service Image" fill />
-                </a>
-              </div>
-              <div className={styles.smallBox}>
-                <a href="#">
-                  <Image src={serviceImage2} alt="Service Image" fill />
-                </a>
-              </div>
-            </div>
-            <div className={styles.portfolioFlex1}>
-              <div className={styles.smallBox}>
-                <a href="#">
-                  <Image src={Portfolio6} alt="Service Image" fill />
-                </a>
-              </div>
-              <div className={styles.bigBox}>
-                <a href="#">
-                  <Image src={Portfolio7} alt="Portfolio Image" fill />
+                  <Image
+                    src="/images/service-img-2.png"
+                    alt="Service Image"
+                    fill
+                  />
                 </a>
               </div>
             </div>
@@ -439,42 +412,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.whatMattersWrapper}>
-        <div className="mainContainer">
-          <div className={styles.videoHeader}>
-            <h4 className="cmnTagHeading">Expertise</h4>
-            <div>
-              <h2>
-                <span>Specialized in </span>What
-              </h2>
-              <h2>Matters</h2>
-            </div>
-          </div>
-          <div className={styles.videoWrapper}>
-            <video
-              src="/videos/3d-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            ></video>
-            <div className={styles.blenderTag}>
-              <Image src={Blender} className="rText" alt="Blender" fill />
-            </div>
-            <h3>3D Interactive Web Experiences</h3>
-            <h5>
-              We design and develop immersive 3D-powered websites that combine
-              storytelling, motion, and performance. Every experience is crafted
-              to engage users, communicate value, and leave a lasting
-              impression.
-            </h5>
-          </div>
-        </div>
-      </section>
+      <VideoPortfolio />
 
-      {/* <div className="bg-red-500 text-white p-6 text-2xl">
-        Tailwind is working 🎉
-      </div> */}
+      <HorizontalScroll />
     </>
   );
 }

@@ -51,6 +51,7 @@
                     }
                 }
                 .menuLogo {
+                    width: 28px;
                     height: 56px;
                     margin: 0;
                     position: absolute;
@@ -63,7 +64,6 @@
                     }
                 }
                 .menuCta {
-                    
                     background-color: var(--theme);
                     width: 28px;
                     height: 42px;
@@ -117,7 +117,7 @@
                     right: 28px;
                     width: 10px;
                     height: 10px;
-                    background-image: url("../../../public/icons/arrow-theme.svg");
+                    background-image: url("/icons/arrow-theme.svg");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 10px;
