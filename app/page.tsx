@@ -9,6 +9,8 @@ import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
 import { Autoplay, Navigation } from "swiper/modules";
 import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
 import ScrollStack from "./components/ScrollStack/ScrollStack";
+import TiltedCard from "./components/TiltedCard/TiltedCard";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 export default function Home() {
   return (
@@ -354,8 +356,6 @@ export default function Home() {
         </div>
       </section>
 
-      
-
       <section className={styles.mainPortfolioWrapper}>
         <div className={styles.portfolioParentBox}>
           <div className="mainContainer">
@@ -365,56 +365,110 @@ export default function Home() {
             </div>
             <div className={styles.portfolioFlex1}>
               <div className={styles.innerBox}>
+                <TiltedCard
+                  tagName="UI/UX DESIGN"
+                  videoSrc="/videos/portfolio-video-2.mp4"
+                  mediaType="video"
+                  altText="Kendrick Lamar - GNX Album Cover"
+                  captionText="Kendrick Lamar - GNX"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip
+                  displayOverlayContent
+                  src={""}
+                  imageSrc={undefined}
+                />
+              </div>
+              <div className={styles.innerBox}>
+                <TiltedCard
+                  tagName="UI/UX DESIGN"
+                  imageSrc="/images/portfolio-img-2.png"
+                  mediaType="image"
+                  altText="Kendrick Lamar - GNX Album Cover"
+                  captionText="Kendrick Lamar - GNX"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip
+                  displayOverlayContent
+                  overlayContent={
+                    <div className="tagBox">
+                      <h4>UI/UX DESIGN</h4>
+                    </div>
+                  }
+                  src={""}
+                  videoSrc={undefined}
+                />
+              </div>
+              <div className={styles.innerBox}>
+                <TiltedCard
+                  tagName="UI/UX DESIGN"
+                  imageSrc="/images/portfolio-img-3.png"
+                  mediaType="image"
+                  altText="Kendrick Lamar - GNX Album Cover"
+                  captionText="Kendrick Lamar - GNX"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip
+                  displayOverlayContent
+                  overlayContent={
+                    <div className="tagBox">
+                      <h4>UI/UX DESIGN</h4>
+                    </div>
+                  }
+                  src={""}
+                  videoSrc={undefined}
+                />
+              </div>
+              <div className={styles.innerBox}>
                 <div className={styles.tagBox}>
-                <h4>UI/UX DESIGN</h4>
-              </div>
-                <a href="#">
-                  <video
-                    src="/videos/portfolio-video-1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  ></video>
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <Image
-                    src="/images/service-img-2.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <video
-                    src="/videos/portfolio-video-1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  ></video>
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <Image
-                    src="/images/service-img-2.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </a>
+                  <h4></h4>
+                </div>
+                <TiltedCard
+                  tagName="UI/UX DESIGN"
+                  videoSrc="/videos/portfolio-video-1.mp4"
+                  mediaType="video"
+                  altText="Kendrick Lamar - GNX Album Cover"
+                  captionText="Kendrick Lamar - GNX"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip
+                  displayOverlayContent
+                  src={""}
+                  imageSrc={undefined}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* <TiltedCard
+        imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+        altText="Kendrick Lamar - GNX Album Cover"
+        captionText="Kendrick Lamar - GNX"
+        containerHeight="300px"
+        containerWidth="300px"
+        imageHeight="300px"
+        imageWidth="300px"
+        rotateAmplitude={12}
+        scaleOnHover={1.05}
+        showMobileWarning={false}
+        showTooltip
+        displayOverlayContent
+        overlayContent={
+          <p className="tilted-card-demo-text">Kendrick Lamar - GNX</p>
+        }
+      /> */}
+
       <VideoPortfolio />
 
       <HorizontalScroll />
+
+      <ContactForm />
     </>
   );
 }

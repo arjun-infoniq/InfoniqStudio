@@ -1,0 +1,141 @@
+.tilted-card-figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        .contentBox {
+            opacity: 1;
+        }
+    }
+}
+
+.tilted-card-mobile-alert {
+    position: absolute;
+    top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .tilted-card-mobile-alert {
+        display: block;
+    }
+    .tilted-card-caption {
+        display: none;
+    }
+}
+
+.tilted-card-inner {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tilted-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    border-radius: 15px;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.tilted-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    will-change: transform;
+    transform: translateZ(30px);
+}
+
+.tilted-card-caption {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #2d2d2d;
+    opacity: 0;
+    z-index: 3;
+}
+
+// .innerBox {
+//     position: relative;
+//     height: 300px;
+//     border-radius: 5px;
+//     overflow: hidden;
+//     @media screen and (max-width: 991px) {
+//         width: 100%;
+//         height: 200px;
+//     }
+//     a {
+//         img {
+//             object-fit: cover;
+//             object-position: left top;
+//         }
+//         video {
+//             width: 100%;
+//             height: 100%;
+//             object-fit: cover;
+//         }
+//     }
+//     &:nth-child(even) {
+//         position: relative;
+//         top: 40px;
+//     }
+// }
+
+.tagBox {
+    background-image: url("/images/tab-back-1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: fit-content;
+    padding: 0 0 4px 30px;
+    position: absolute;
+    top: 0px;
+    right: 15%;
+    h4 {
+        font-family: var(--font-bruno);
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 600;
+        min-width: 200px;
+        padding-left: 30px;
+    }
+}
+
+.contentBox {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #00000066, #000000db);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+    h5 {
+        font-family: var(--font-bruno);
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+    h6 {
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
