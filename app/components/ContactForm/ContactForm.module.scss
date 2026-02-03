@@ -26,6 +26,9 @@
     // &:nth-child(2) {
     //   background-color: white;
     // }
+    @media screen and (max-width: 991px) { 
+        height: auto;
+    }
     .tagBox {
         background-image: url("/images/tab-back-1.svg");
         background-repeat: no-repeat;
@@ -78,6 +81,7 @@
                 font-weight: 400;
                 margin-top: 20px;
                 margin-bottom: 30px;
+                max-width: 382px;
             }
         }
         .formWrapper {
@@ -87,7 +91,6 @@
 
             @media screen and (max-width: 991px) {
                 width: 100% !important;
-                height: 200px;
             }
             .formBox {
                 width: 100%;
@@ -95,7 +98,8 @@
                 background-color: #ffffff;
                 border-radius: 8px;
                 margin-bottom: 30px;
-                input,textarea {
+                input,
+                textarea {
                     width: 100%;
                     font-size: 14px;
                     font-family: var(--font-bruno);
@@ -116,4 +120,10 @@
             }
         }
     }
+}
+
+.successMail {
+    margin-top: 20px;
+    color: var(--theme);
+    font-family: var(--font-bruno);
 }

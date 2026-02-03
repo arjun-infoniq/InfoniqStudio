@@ -49,6 +49,10 @@
                     @media screen and (max-width: 768px) {
                         display: none;
                     }
+                    &.navActive {
+                        color: var(--theme);
+                        font-weight: 600;
+                    }
                 }
                 .menuLogo {
                     width: 28px;

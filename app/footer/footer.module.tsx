@@ -39,7 +39,7 @@ export default function Footer() {
             <ul className={styles.socialWrapper}>
               <li>
                 <a
-                  href="https://www.instagram.com/infoniq.studio?igsh=MXE5Y2prMGp6Z3V1cw=="
+                  href="https://www.instagram.com/infoniq.studio  "
                   target="_blank"
                 >
                   <Image src="/icons/social-1.svg" alt="Hero Image" fill />
@@ -64,9 +64,19 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <h5>Careers</h5>
-            <p>Apply on</p>
-            <p>hello@infoniq.studio</p>
+            <h5>Contact Us</h5>
+            <p>
+              <a href="#">
+                <Image src="/icons/icon-call.svg" alt="Call" fill /> +91 73560
+                28114
+              </a>
+            </p>
+            <p>
+              <a href="#">
+                <Image src="/icons/icon-mail.svg" alt="Mail" fill />{" "}
+                hello@infoniq.studio
+              </a>
+            </p>
           </div>
           <div className={styles.sectFour}>
             <video
@@ -78,8 +88,10 @@ export default function Footer() {
             ></video>
           </div>
         </div>
-        <div className={styles.subFooter}>
-
+      </div>
+      <div className={styles.subFooter}>
+        <div className="mainContainer">
+          <h6>© 2026 Infoniq Studio LLP. All rights reserved.</h6>
         </div>
       </div>
     </footer>

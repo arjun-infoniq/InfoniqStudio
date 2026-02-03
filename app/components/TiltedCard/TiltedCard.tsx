@@ -7,6 +7,8 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 import "./TiltedCard.scss";
 
 interface TiltedCardProps {
+  mainHeading: string;
+  subHeading: string;
   src: string;
   mediaType: "image" | "video";
   videoSrc: React.ComponentProps<"video">["src"];
@@ -33,6 +35,8 @@ const springValues: SpringOptions = {
 };
 
 export default function TiltedCard({
+  mainHeading,
+  subHeading,
   mediaType,
   videoSrc,
   imageSrc,
@@ -147,20 +151,17 @@ export default function TiltedCard({
             <h4>{tagName}</h4>
           </div>
           <div className="contentBox">
-            <h5>3D Interactive Websites</h5>
-            <h6>
-              Immersive, high-performance websites built with advanced 3D
-              visuals, smooth animations, and modern UI.
-            </h6>
+            <h5>{mainHeading}</h5>
+            <h6>{subHeading}</h6>
           </div>
-          <a href="#">
+          <span>
             {mediaType === "video" ? (
               <video src={videoSrc} autoPlay loop muted playsInline />
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={imageSrc} alt={altText} />
             )}
-          </a>
+          </span>
         </div>
 
         {displayOverlayContent && overlayContent && (

@@ -318,12 +318,14 @@ a {
     left: 20px;
   }
 }
+
 .rotatingText .rText {
   position: relative !important;
   height: 80px !important;
   width: auto !important;
   animation: spin 15s linear infinite;
 }
+
 .rotatingText .rArrow {
   width: auto !important;
   height: 15px !important;
@@ -331,41 +333,51 @@ a {
   left: 50% !important;
   transform: translate(-50%, -50%);
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
 .cmnButton {
-  background-color: #000;
-  color: #fff;
-  border-radius: 7px;
-  padding: 15px 25px 15px 50px;
-  font-size: 14px;
-  position: relative;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  background-color: #0000;
+  background-image: url("/images/cmn-btn-back.svg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 225px;
+  padding: 20px 27px 20px 65px;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  border-radius: 7px;
+  transition: all .4s ease-in-out;
 }
+
 .cmnButton::before {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
   background-image: url("/icons/arrow-red.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 15px;
-  transition: all 0.4s ease-in-out;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 14px;
+  left: 28px;
+  transform: translateY(-50%);
+  transition: all .4s ease-in-out;
 }
+
 .cmnButton:hover {
-  background-color: var(--theme);
+  background-image: url("/images/cmn-btn-hover.svg");
 }
+
 .cmnButton:hover::before {
   filter: brightness(0) invert(1);
 }
+
 .cmnTagHeading {
   position: relative;
   padding-left: 20px;
@@ -374,6 +386,7 @@ a {
   text-transform: uppercase;
   font-size: 12px;
 }
+
 .cmnTagHeading::before {
   content: "";
   position: absolute;
@@ -386,6 +399,7 @@ a {
   background-repeat: no-repeat;
   background-size: 10px;
 }
+
 .cmnMainHeading {
   font-family: var(--font-bruno);
   text-transform: uppercase;
@@ -393,9 +407,11 @@ a {
   max-width: 700px;
   font-size: 40px;
 }
+
 .scroll-stack {
   height: 100vh !important;
 }
+
 .scroll-stack-card {
   background-position: top right;
   background-repeat: no-repeat;
@@ -403,21 +419,28 @@ a {
   transform-origin: top center;
   will-change: transform;
 }
+
 .scroll-stack-card:nth-child(1) {
   background-image: url("/images/service-shape-1.svg");
 }
+
 .scroll-stack-card:nth-child(2) {
   background-image: url("/images/service-shape-2.svg");
 }
+
 .scroll-stack-card:nth-child(3) {
   background-image: url("/images/service-shape-3.svg");
 }
+
 .scroll-stack-card:nth-child(4) {
   background-image: url("/images/service-shape-1.svg");
 }
+
 .scroll-stack-card:nth-child(5) {
   background-image: url("/images/service-shape-2.svg");
 }
+
 .scroll-stack-card:nth-child(6) {
   background-image: url("/images/service-shape-3.svg");
 }
+
