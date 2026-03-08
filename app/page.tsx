@@ -2,18 +2,43 @@
 
 import Image from "next/image";
 import styles from "./page.module.scss";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
+// import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
 import { Autoplay, Navigation } from "swiper/modules";
 import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
-import ScrollStack from "./components/ScrollStack/ScrollStack";
+import Lenis from "lenis";
+import ServiceCards from "./components/ServiceCards/ServiceCards";
+import CmnCta from "./components/CmnCta/CmnCta";
+// import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
+import Accordion from "./components/Accordion/Accordion";
+import Works from "./components/Works/Works";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavClick = (sectionId: string) => {
+    if (sectionId === "contact") {
+      // navigate to contact page since section isn't on this page
+      router.push("/Contact/");
+      return;
+    }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const lenis = new Lenis();
+      lenis.scrollTo(element, {
+        offset: 0,
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    }
+  };
+
   return (
     <>
-      <section className={styles.heroMainWrapper}>
+      <section id="home" className={styles.heroMainWrapper}>
         <div className="mainContainer">
           <div className={styles.heroWrapper}>
             <div className={styles.leftSection}>
@@ -37,7 +62,12 @@ export default function Home() {
                   Specialized in aesthetic, 3D driven websites that elevate your
                   brand.
                 </h3>
-                <button className="cmnButton">Start Your project</button>
+                <button
+                  className="cmnButton"
+                  onClick={() => handleNavClick("contact")}
+                >
+                  Start Your project
+                </button>
               </div>
               <div className={styles.swiperWrapper}>
                 <Swiper
@@ -48,7 +78,7 @@ export default function Home() {
                       slidesPerView: 4,
                     },
                   }}
-                  spaceBetween={20}
+                  spaceBetween={10}
                   loop
                   autoplay={{
                     delay: 3000,
@@ -61,23 +91,31 @@ export default function Home() {
                   className={styles.heroSlider}
                 >
                   <SwiperSlide>
-                    <Image src="/images/portfolio-1.png" alt="Slide 1" fill />
+                    <Image src="/images/swiper-1.png" alt="Slide 1" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/portfolio-2.png" alt="Slide 2" fill />
+                    <Image src="/images/swiper-2.png" alt="Slide 2" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/portfolio-3.png" alt="Slide 3" fill />
+                    <Image src="/images/swiper-3.png" alt="Slide 3" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/portfolio-4.png" alt="Slide 4" fill />
+                    <Image src="/images/swiper-4.png" alt="Slide 4" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/portfolio-5.png" alt="Slide 5" fill />
+                    <Image src="/images/swiper-5.png" alt="Slide 5" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src="/images/swiper-6.png" alt="Slide 5" fill />
+                  </SwiperSlide>
+
+                  <SwiperSlide>
+                    <Image src="/images/swiper-7.png" alt="Slide 5" fill />
                   </SwiperSlide>
                 </Swiper>
                 <div className={styles.swiperBottom}>
@@ -89,7 +127,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <button className={styles.exploreBtn}>Explore Now</button>
+                    <button
+                      className={styles.exploreBtn}
+                      onClick={() => handleNavClick("contact")}
+                    >
+                      Explore Now
+                    </button>
                   </div>
                 </div>
               </div>
@@ -99,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.mainAboutWrapper}>
+      <section id="about" className={styles.mainAboutWrapper}>
         <div className="mainContainer">
           <h4 className="cmnTagHeading">About Us</h4>
           <div className={styles.aboutFlex}>
@@ -135,286 +178,58 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.stackBoxWrapper}>
-        <div className="mainContainer">
-          <h4 className="cmnTagHeading">Services</h4>
-          <h5 className="cmnMainHeading">What We Create</h5>
-          <ScrollStack>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox1}>
-                <h4>3d websites</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-1.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-                <div className={styles.contentSet}>
-                  <h2>3D Interactive Websites</h2>
-                  <h3>
-                    Immersive, high-performance websites built with advanced 3D
-                    visuals, smooth animations, and modern UI.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/icons/rotate-text-dark.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox2}>
-                <h4>Web development</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.contentSet}>
-                  <h2 className={styles.light}>Custom Web Development</h2>
-                  <h3 className={styles.light}>
-                    Fast, scalable, and secure web applications engineered for
-                    real-world business needs.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/images/rotate-text.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-2.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox3}>
-                <h4>app development</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-3.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-                <div className={styles.contentSet}>
-                  <h2 className={styles.light}>Mobile App Development</h2>
-                  <h3 className={styles.light}>
-                    Intuitive Android and iOS apps designed for seamless user
-                    experiences and strong performance.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/images/rotate-text.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox1}>
-                <h4>branding</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.contentSet}>
-                  <h2>Branding & Identity Design</h2>
-                  <h3>
-                    Modern brand identities that enhance recognition, build
-                    trust, and differentiate your business.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/icons/rotate-text-dark.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-4.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox2}>
-                <h4>ui/ux design</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-5.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-                <div className={styles.contentSet}>
-                  <h2 className={styles.light}>UI/UX Design</h2>
-                  <h3 className={styles.light}>
-                    User-focused design solutions blending aesthetics, clarity,
-                    and smooth interaction flows.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/images/rotate-text.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.stackBox}>
-              <div className={styles.tagBox3}>
-                <h4>product landing</h4>
-              </div>
-              <div className={styles.contentFlexWrapper}>
-                <div className={styles.contentSet}>
-                  <h2 className={styles.light}>Product Landing Pages</h2>
-                  <h3 className={styles.light}>
-                    High-conversion, visually striking landing pages ideal for
-                    launches, campaigns, and marketing.
-                  </h3>
-                  <div className="stackPage rotatingText">
-                    <Image
-                      src="/images/rotate-text.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                </div>
-                <div className={styles.imgSet}>
-                  <Image
-                    src="/images/service-img-6.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-          </ScrollStack>
-        </div>
-      </section>
+      <ServiceCards />
 
-      
-
-      <section className={styles.mainPortfolioWrapper}>
-        <div className={styles.portfolioParentBox}>
-          <div className="mainContainer">
-            <div className={styles.portfolioheader}>
-              <h2 className="cmnMainHeading">Crafted With Vision</h2>
-              <h3>delivered with precision</h3>
-            </div>
-            <div className={styles.portfolioFlex1}>
-              <div className={styles.innerBox}>
-                <div className={styles.tagBox}>
-                <h4>UI/UX DESIGN</h4>
-              </div>
-                <a href="#">
-                  <video
-                    src="/videos/portfolio-video-1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  ></video>
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <Image
-                    src="/images/service-img-2.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <video
-                    src="/videos/portfolio-video-1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  ></video>
-                </a>
-              </div>
-              <div className={styles.innerBox}>
-                <a href="#">
-                  <Image
-                    src="/images/service-img-2.png"
-                    alt="Service Image"
-                    fill
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Works/>
 
       <VideoPortfolio />
 
-      <HorizontalScroll />
+
+
+
+      {/* <HorizontalScroll /> */}
+
+      <section className={styles.cmnParentBottom}>
+        <div className={styles.faqMainWrapper}>
+          <h4 className="cmnTagHeading">Faq</h4>
+          <Accordion
+            items={[
+              {
+                title:
+                  "What makes Infoniq Studio different from other agencies ?",
+                content:
+                  "Infoniq Studio focuses on building purpose-driven digital products, not just good-looking screens. We combine strategy, design, and engineering under one roof, ensuring every decision supports performance, scalability, and long-term business growth—not quick fixes or templates.",
+              },
+              {
+                title: "Do you handle both design and development ?",
+                content:
+                  "Yes. We handle the entire lifecycle—UX research, UI design, branding, front-end, back-end, and deployment. This avoids handoff gaps, speeds up execution, and ensures what's designed is exactly what gets built.",
+              },
+              {
+                title: "Can you redesign an existing website or app ?",
+                content:
+                  "Absolutely. We audit your current product for usability, performance, and technical limitations, then redesign or rebuild it with a modern, scalable approach—without breaking what already works.",
+              },
+              {
+                title: "Are your solutions scalable and future-ready ?",
+                content:
+                  "Yes. Our solutions are built with modular architecture, clean code, and modern frameworks, making them easy to scale, update, and integrate with future tools, APIs, or platforms as your business grows.",
+              },
+              {
+                title: "How do we start a project with Infoniq ?",
+                content:
+                  "It starts with a discovery call where we understand your goals, challenges, and scope. From there, we propose a clear roadmap with timelines, deliverables, and costs—no hidden steps, no confusion.",
+              },
+            ]}
+          />
+        </div>
+
+        <section className={styles.cmnCtaWrapper}>
+          <div className="mainContainer">
+            <CmnCta />
+          </div>
+        </section>
+      </section>
     </>
   );
 }
