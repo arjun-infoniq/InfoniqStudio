@@ -1,9 +1,6 @@
 .mainContactForm {
     padding: 200px 0 100px 0;
-    background-image: url("/images/hero-back-img.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(#000, #0000);
     min-height: 100vh;
 }
 
@@ -26,7 +23,7 @@
     // &:nth-child(2) {
     //   background-color: white;
     // }
-    @media screen and (max-width: 991px) { 
+    @media screen and (max-width: 991px) {
         height: auto;
     }
     .tagBox {
@@ -61,6 +58,7 @@
             padding-left: 30px;
             @media screen and (max-width: 991px) {
                 width: 100%;
+                padding-left: 0;
             }
             .light {
                 color: #fff;
@@ -71,6 +69,7 @@
                 font-size: 34px;
                 font-weight: lighter;
                 color: #000;
+                margin-top: 15px;
                 @media screen and (max-width: 991px) {
                     font-size: 16px;
                 }
@@ -82,6 +81,9 @@
                 margin-top: 20px;
                 margin-bottom: 30px;
                 max-width: 382px;
+            }
+            h4 {
+                color: #000;
             }
         }
         .formWrapper {

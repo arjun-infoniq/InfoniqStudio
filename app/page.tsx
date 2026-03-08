@@ -2,139 +2,145 @@
 
 import Image from "next/image";
 import styles from "./page.module.scss";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 // import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
 import { Autoplay, Navigation } from "swiper/modules";
 import VideoPortfolio from "./components/VideoPortfolio/VideoPortfolio";
-
-import TiltedCard from "./components/TiltedCard/TiltedCard";
+import Lenis from "lenis";
 import ServiceCards from "./components/ServiceCards/ServiceCards";
 import CmnCta from "./components/CmnCta/CmnCta";
-import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
-import Silk from "./components/Silk/Silk";
+// import HorizontalScroll from "./components/HorizontalScroll/HorizontalScroll";
+import Accordion from "./components/Accordion/Accordion";
+import Works from "./components/Works/Works";
 
 export default function Home() {
+  const router = useRouter();
+
   const handleNavClick = (sectionId: string) => {
+    if (sectionId === "contact") {
+      // navigate to contact page since section isn't on this page
+      router.push("/Contact/");
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const lenis = new Lenis();
+      lenis.scrollTo(element, {
+        offset: 0,
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
     }
   };
 
   return (
     <>
-      
-        <section id="home" className={styles.heroMainWrapper}>
-          <div className="mainContainer">
-            <div className={styles.heroWrapper}>
-              <div className={styles.leftSection}>
-                <h2>Crafting Modern Web Experiences</h2>
-                <div className={styles.flexWrapper}>
-                  <div className="rotatingText">
-                    <Image
-                      src="/images/rotate-text.svg"
-                      className="rText"
-                      alt="Rotate Text"
-                      fill
-                    />
-                    <Image
-                      src="/icons/arrow-red.svg"
-                      className="rArrow"
-                      alt="Rotate Text"
-                      fill
-                    />
-                  </div>
-                  <h3>
-                    Specialized in aesthetic, 3D driven websites that elevate
-                    your brand.
-                  </h3>
-                  <button
-                    className="cmnButton"
-                    onClick={() => handleNavClick("contact")}
-                  >
-                    Start Your project
-                  </button>
+      <section id="home" className={styles.heroMainWrapper}>
+        <div className="mainContainer">
+          <div className={styles.heroWrapper}>
+            <div className={styles.leftSection}>
+              <h2>Crafting Modern Web Experiences</h2>
+              <div className={styles.flexWrapper}>
+                <div className="rotatingText">
+                  <Image
+                    src="/images/rotate-text.svg"
+                    className="rText"
+                    alt="Rotate Text"
+                    fill
+                  />
+                  <Image
+                    src="/icons/arrow-red.svg"
+                    className="rArrow"
+                    alt="Rotate Text"
+                    fill
+                  />
                 </div>
-                <div className={styles.swiperWrapper}>
-                  <Swiper
-                    modules={[Autoplay, Navigation]}
-                    slidesPerView={2.5}
-                    breakpoints={{
-                      991: {
-                        slidesPerView: 4,
-                      },
-                    }}
-                    spaceBetween={10}
-                    loop
-                    autoplay={{
-                      delay: 3000,
-                      disableOnInteraction: false,
-                    }}
-                    navigation={{
-                      prevEl: "#Prev",
-                      nextEl: "#Next",
-                    }}
-                    className={styles.heroSlider}
-                  >
-                    <SwiperSlide>
-                      <Image src="/images/swiper-1.png" alt="Slide 1" fill />
-                    </SwiperSlide>
+                <h3>
+                  Specialized in aesthetic, 3D driven websites that elevate your
+                  brand.
+                </h3>
+                <button
+                  className="cmnButton"
+                  onClick={() => handleNavClick("contact")}
+                >
+                  Start Your project
+                </button>
+              </div>
+              <div className={styles.swiperWrapper}>
+                <Swiper
+                  modules={[Autoplay, Navigation]}
+                  slidesPerView={2.5}
+                  breakpoints={{
+                    991: {
+                      slidesPerView: 4,
+                    },
+                  }}
+                  spaceBetween={10}
+                  loop
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  navigation={{
+                    prevEl: "#Prev",
+                    nextEl: "#Next",
+                  }}
+                  className={styles.heroSlider}
+                >
+                  <SwiperSlide>
+                    <Image src="/images/swiper-1.png" alt="Slide 1" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-2.png" alt="Slide 2" fill />
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-2.png" alt="Slide 2" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-3.png" alt="Slide 3" fill />
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-3.png" alt="Slide 3" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-4.png" alt="Slide 4" fill />
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-4.png" alt="Slide 4" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-5.png" alt="Slide 5" fill />
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-5.png" alt="Slide 5" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-6.png" alt="Slide 5" fill />
-                    </SwiperSlide>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-6.png" alt="Slide 5" fill />
+                  </SwiperSlide>
 
-                    <SwiperSlide>
-                      <Image src="/images/swiper-7.png" alt="Slide 5" fill />
-                    </SwiperSlide>
-                  </Swiper>
-                  <div className={styles.swiperBottom}>
-                    <div className={styles.leftSet}>
-                      <h3>Featured projects</h3>
-                      <div className={styles.customNav}>
-                        <button
-                          className={styles.customPrev}
-                          id="Prev"
-                        ></button>
-                        <button
-                          className={styles.customNext}
-                          id="Next"
-                        ></button>
-                      </div>
+                  <SwiperSlide>
+                    <Image src="/images/swiper-7.png" alt="Slide 5" fill />
+                  </SwiperSlide>
+                </Swiper>
+                <div className={styles.swiperBottom}>
+                  <div className={styles.leftSet}>
+                    <h3>Featured projects</h3>
+                    <div className={styles.customNav}>
+                      <button className={styles.customPrev} id="Prev"></button>
+                      <button className={styles.customNext} id="Next"></button>
                     </div>
-                    <div>
-                      <button
-                        className={styles.exploreBtn}
-                        onClick={() => handleNavClick("contact")}
-                      >
-                        Explore Now
-                      </button>
-                    </div>
+                  </div>
+                  <div>
+                    <button
+                      className={styles.exploreBtn}
+                      onClick={() => handleNavClick("contact")}
+                    >
+                      Explore Now
+                    </button>
                   </div>
                 </div>
               </div>
-              <div className={styles.rightSection}></div>
             </div>
+            <div className={styles.rightSection}></div>
           </div>
-        </section>
+        </div>
+      </section>
 
       <section id="about" className={styles.mainAboutWrapper}>
         <div className="mainContainer">
@@ -174,221 +180,55 @@ export default function Home() {
 
       <ServiceCards />
 
-      <div id="portfolio">
-        <section className={styles.mainPortfolioWrapper}>
-          <div className={styles.portfolioParentBox}>
-            <div className="mainContainer">
-              <div className={styles.portfolioheader}>
-                <h2 className="cmnMainHeading">Crafted With Vision</h2>
-                <h3>delivered with precision</h3>
-              </div>
-              <div className={styles.portfolioFlex1}>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    videoSrc="/videos/portfolio-video-2.mp4"
-                    mediaType="video"
-                    mainHeading="3D Interactive Websites"
-                    subHeading="Immersive, high-performance websites built with advanced 3D visuals, smooth animations, and modern UI."
-                    altText="3D Interactive Websites"
-                    captionText="3D Interactive Websites"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    src={""}
-                    imageSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-img-2.png"
-                    mediaType="image"
-                    mainHeading="Custom Web Development"
-                    subHeading="Fast, scalable, and secure web applications engineered for real-world business needs."
-                    altText="Custom Web Development"
-                    captionText="Custom Web Development"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-img-3.png"
-                    mediaType="image"
-                    mainHeading="Mobile App Development"
-                    subHeading="Intuitive Android and iOS apps designed for seamless user experiences and strong performance."
-                    altText="Mobile App Development"
-                    captionText="Mobile App Development"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    videoSrc="/videos/portfolio-video-1.mp4"
-                    mediaType="video"
-                    mainHeading="Creative Storytelling & Production"
-                    subHeading="Impact-driven films and digital content crafted to connect, engage, and perform across modern media platforms."
-                    altText="Creative Storytelling & Production"
-                    captionText="Creative Storytelling & Production"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    src={""}
-                    imageSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-img-4.png"
-                    mediaType="image"
-                    mainHeading="Nature Inspired Digital Experiences"
-                    subHeading="Thoughtfully designed websites that blend aesthetics, usability, and performance to create calm, immersive user journeys."
-                    altText="Nature Inspired Digital Experiences"
-                    captionText="Nature Inspired Digital Experiences"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-11.png"
-                    mediaType="image"
-                    mainHeading="Buildco Architects Website Experience"
-                    subHeading="A cinematic website translating bold storytelling into a clear, high-performance digital experience."
-                    altText="Buildco Architects Website Experience"
-                    captionText="Buildco Architects Website Experience"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-12.png"
-                    mediaType="image"
-                    mainHeading="Nova - Next Gen Electric Scooters"
-                    subHeading="Smart electric scooter development with efficient motors, battery management, safety, connectivity, and sustainability."
-                    altText="Nova - Next Gen Electric Scooters"
-                    captionText="Nova - Next Gen Electric Scooters"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-                <div className={styles.innerBox}>
-                  <TiltedCard
-                    tagName="UI/UX DESIGN"
-                    imageSrc="/images/portfolio-img-5.png"
-                    mediaType="image"
-                    mainHeading="Crayons Bridge"
-                    subHeading="Scalable OTT platform development for secure streaming, subscriptions, analytics, and multi-device user experiences."
-                    altText="Crayons Bridge"
-                    captionText="Crayons Bridge"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.05}
-                    showMobileWarning={false}
-                    showTooltip
-                    displayOverlayContent
-                    overlayContent={
-                      <div className="tagBox">
-                        <h4>UI/UX DESIGN</h4>
-                      </div>
-                    }
-                    src={""}
-                    videoSrc={undefined}
-                  />
-                </div>
-              </div>
-            </div>
+      <Works/>
+
+      <VideoPortfolio />
+
+
+
+
+      {/* <HorizontalScroll /> */}
+
+      <section className={styles.cmnParentBottom}>
+        <div className={styles.faqMainWrapper}>
+          <h4 className="cmnTagHeading">Faq</h4>
+          <Accordion
+            items={[
+              {
+                title:
+                  "What makes Infoniq Studio different from other agencies ?",
+                content:
+                  "Infoniq Studio focuses on building purpose-driven digital products, not just good-looking screens. We combine strategy, design, and engineering under one roof, ensuring every decision supports performance, scalability, and long-term business growth—not quick fixes or templates.",
+              },
+              {
+                title: "Do you handle both design and development ?",
+                content:
+                  "Yes. We handle the entire lifecycle—UX research, UI design, branding, front-end, back-end, and deployment. This avoids handoff gaps, speeds up execution, and ensures what's designed is exactly what gets built.",
+              },
+              {
+                title: "Can you redesign an existing website or app ?",
+                content:
+                  "Absolutely. We audit your current product for usability, performance, and technical limitations, then redesign or rebuild it with a modern, scalable approach—without breaking what already works.",
+              },
+              {
+                title: "Are your solutions scalable and future-ready ?",
+                content:
+                  "Yes. Our solutions are built with modular architecture, clean code, and modern frameworks, making them easy to scale, update, and integrate with future tools, APIs, or platforms as your business grows.",
+              },
+              {
+                title: "How do we start a project with Infoniq ?",
+                content:
+                  "It starts with a discovery call where we understand your goals, challenges, and scope. From there, we propose a clear roadmap with timelines, deliverables, and costs—no hidden steps, no confusion.",
+              },
+            ]}
+          />
+        </div>
+
+        <section className={styles.cmnCtaWrapper}>
+          <div className="mainContainer">
+            <CmnCta />
           </div>
         </section>
-
-        {/* <TiltedCard
-        imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
-        altText="Kendrick Lamar - GNX Album Cover"
-        captionText="Kendrick Lamar - GNX"
-        containerHeight="300px"
-        containerWidth="300px"
-        imageHeight="300px"
-        imageWidth="300px"
-        rotateAmplitude={12}
-        scaleOnHover={1.05}
-        showMobileWarning={false}
-        showTooltip
-        displayOverlayContent
-        overlayContent={
-          <p className="tilted-card-demo-text">Kendrick Lamar - GNX</p>
-        }
-      /> */}
-
-        <VideoPortfolio />
-
-        <HorizontalScroll />
-      </div>
-
-      <section className={styles.cmnCtaWrapper}>
-        <div className="mainContainer">
-          <CmnCta />
-        </div>
       </section>
     </>
   );

@@ -310,14 +310,14 @@ a {
   height: 80px;
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   .stackPage.rotatingText {
     position: absolute;
     z-index: 1;
     top: 212px;
     left: 20px;
   }
-}
+} */
 
 .rotatingText .rText {
   position: relative !important;
@@ -379,6 +379,7 @@ a {
 }
 
 .cmnTagHeading {
+  color: #fff;
   position: relative;
   padding-left: 20px;
   font-weight: lighter;
@@ -444,3 +445,8 @@ a {
   background-image: url("/images/service-shape-3.svg");
 }
 
+@media screen and (max-width: 991px) { 
+  .cmnMainHeading{
+    font-size: 24px;
+  }
+}

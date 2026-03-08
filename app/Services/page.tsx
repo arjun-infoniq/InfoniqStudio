@@ -1,11 +1,16 @@
 "use client";
 
-import styles from "./Services.module.scss";
+// import Image from "next/image";
+// import styles from "./Services.module.scss";
+
+import SpreadComponents from "../components/SpreadComponents/SpreadComponents";
+import ServiceCards from "../components/ServiceCards/ServiceCards";
 
 export default function ServicesPage() {
   return (
-    <div id="services" className={styles.services}>
-      {/* Your Services content here */}
-    </div>
+    <>
+      <SpreadComponents />
+      <ServiceCards />
+    </>
   );
 }

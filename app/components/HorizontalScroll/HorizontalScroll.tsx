@@ -50,7 +50,11 @@ export default function HorizontalScroll() {
         ref={trackRef}
         className="flex h-full"
       >
-        <div className="panel">Panel 1</div>
+        <div className="panel">
+          <video autoPlay muted loop playsInline preload="auto">
+                <source src="/videos/preview-1.mp4" type="video/mp4" />
+              </video>
+        </div>
         <div className="panel">Panel 2</div>
         <div className="panel">Panel 3</div>
         <div className="panel">Panel 4</div>

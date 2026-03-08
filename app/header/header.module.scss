@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 991px) {
             display: block;
             width: 100%;
         }
@@ -32,9 +32,10 @@
                 border-radius: 4px;
                 transition: all 0.4s ease-in-out;
                 position: relative;
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 991px) {
                     background-color: transparent;
                     border: 0;
+                    padding: 0;
                 }
 
                 li {
@@ -46,7 +47,7 @@
                     // text-transform: uppercase;
                 }
                 .navItem {
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: 991px) {
                         display: none;
                     }
                     &.navActive {
@@ -88,12 +89,127 @@
                         transform: translate(-50%, -50%);
                     }
                 }
+
+                @media screen and (max-width: 991px) {
+                    &.mobileMenuOpen {
+                        z-index: 100;
+                        background-color: #0e0e0e;
+                        border: 1px solid #2f2f2f;
+                        border-radius: 0;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        // height: calc(100vh - 95px);
+                        height: 100vh;
+                        padding: 20px;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        overflow-y: auto;
+                        display: flex !important;
+
+                        li {
+                            padding: 15px 0;
+                            font-size: 18px;
+                            margin: 15px !important;
+                            text-align: center;
+                            display: block !important;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+
+                            &.navItem {
+                                display: block !important;
+                                cursor: pointer;
+
+                                &.navActive {
+                                    color: var(--theme);
+                                    font-weight: 600;
+                                }
+                            }
+
+                            &.menuCta {
+                                // position: static;
+                                // width: auto;
+                                // height: auto;
+                                // background-color: transparent;
+                                // opacity: 1;
+                                // margin: 0 !important;
+                                // padding: 15px 0;
+                                display: none;
+                            }
+
+                            &.menuLogo {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mobileMenuButton {
+            position: absolute;
+            right: 15px;
+            top: 30px;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+            padding: 10px;
+            transition: all 0.3s ease;
+
+            @media screen and (max-width: 991px) {
+                display: flex;
+            }
+
+            span {
+                width: 26px;
+                height: 2.5px;
+                background-color: #ffffff;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+                display: block;
+
+                &:nth-child(1) {
+                    transition:
+                        transform 0.3s ease,
+                        opacity 0.3s ease;
+                }
+
+                &:nth-child(2) {
+                    transition: opacity 0.3s ease;
+                }
+
+                &:nth-child(3) {
+                    transition:
+                        transform 0.3s ease,
+                        opacity 0.3s ease;
+                }
+            }
+
+            &.active span {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translateY(12px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translateY(-12px);
+                }
             }
         }
         .ctaWrapper {
             opacity: 1;
             transition: all 0.4s ease-in-out;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 991px) {
                 display: none;
             }
             button {
@@ -135,7 +251,7 @@
 .mainHeader.active {
     .logoWrapper {
         opacity: 0;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 991px) {
             display: none;
         }
     }
@@ -143,7 +259,7 @@
         ul {
             background-color: #0e0e0e;
             padding: 15px 56px 15px 56px;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 991px) {
                 padding: 26px;
                 background-color: transparent;
                 border: 0;
@@ -152,13 +268,14 @@
                 opacity: 1;
             }
             .menuCta {
-                opacity: 1;
+                // opacity: 1;
+                display: none;
             }
         }
     }
     .ctaWrapper {
         opacity: 0;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 991px) {
             display: none;
         }
     }

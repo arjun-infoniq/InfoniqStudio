@@ -15,6 +15,7 @@ const navRoutes: Record<string, string> = {
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -34,10 +35,10 @@ export default function Header() {
 
   const getActiveSection = () => {
     if (pathname === "/") return "home";
-    if (pathname === "/About") return "about";
-    if (pathname === "/Services") return "services";
-    if (pathname === "/Portfolio") return "portfolio";
-    if (pathname === "/Contact") return "contact";
+    if (pathname === "/About/") return "about";
+    if (pathname === "/Services/") return "services";
+    if (pathname === "/Portfolio/") return "portfolio";
+    if (pathname === "/Contact/") return "contact";
     return "";
   };
 
@@ -46,7 +47,13 @@ export default function Header() {
   const handleNavClick = (sectionId: string) => {
     const route = navRoutes[sectionId];
     router.push(route);
+    setMobileMenuOpen(false); // Close menu after navigation
   };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
 
   return (
     <nav className={`${styles.mainHeader} ${isActive ? styles.active : ""}`}>
@@ -56,8 +63,11 @@ export default function Header() {
             <Image src="/images/logo.svg" alt="Logo" fill />
           </div>
           <div className={styles.menuWrapper}>
-            <ul>
-              <li className={styles.menuLogo} onClick={() => handleNavClick("home")}>
+            <ul className={mobileMenuOpen ? styles.mobileMenuOpen : ""}>
+              <li
+                className={styles.menuLogo}
+                onClick={() => handleNavClick("home")}
+              >
                 <Image src="/images/logo-icon.svg" alt="Logo" fill />
               </li>
               <li
@@ -100,13 +110,30 @@ export default function Header() {
               >
                 Contact Us
               </li>
-              <li className={styles.menuCta} onClick={() => handleNavClick("contact")}>
+              <li
+                className={styles.menuCta}
+                onClick={() => handleNavClick("contact")}
+              >
                 <Image src="/icons/arrow-theme.svg" alt="Arrow" fill />
               </li>
             </ul>
           </div>
+          <button
+            className={`${styles.mobileMenuButton} ${
+              mobileMenuOpen ? styles.active : ""
+            }`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+            type="button"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div className={styles.ctaWrapper}>
-            <button onClick={() => handleNavClick("contact")}>Let&apos;s Talk</button>
+            <button onClick={() => handleNavClick("contact")}>
+              Let&apos;s Talk
+            </button>
           </div>
         </div>
       </div>

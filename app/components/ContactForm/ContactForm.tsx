@@ -52,6 +52,7 @@ export default function ContactForm() {
             </div>
             <div className={styles.contentFlexWrapper}>
               <div className={styles.contentSet}>
+                <h4 className="cmnTagHeading">About Us</h4>
                 <h2>GET IN TOUCH</h2>
                 <h3>
                   Let’s connect to transform ideas into meaningful digital

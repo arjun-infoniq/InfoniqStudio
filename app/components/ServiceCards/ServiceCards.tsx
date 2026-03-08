@@ -62,10 +62,10 @@ export default function ServiceCards() {
                   real-world business needs.
                 </h3>
                 <ul className={styles.light}>
-                  <li>3D Website Design</li>
-                  <li>Product Visuals</li>
-                  <li>Interactive components</li>
-                  <li>Motion Graphics</li>
+                  <li>Marketing Website</li>
+                  <li>Corporate Website</li>
+                  <li>Portfolio Sites</li>
+                  <li>Performance-focused builds</li>
                 </ul>
                 {/* <div className="stackPage rotatingText">
                     <Image
@@ -93,12 +93,12 @@ export default function ServiceCards() {
           </div>
           <div className={styles.stackBox}>
             <div className={styles.tagBox3}>
-              <h4>app development</h4>
+              <h4>Mobile Apps</h4>
             </div>
             <div className={styles.contentFlexWrapper}>
               <div className={styles.imgSet}>
                 <video autoPlay muted loop playsInline preload="auto">
-                  <source src="/videos/service-vid-1.mp4" type="video/mp4" />
+                  <source src="/videos/service-vid-2.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className={styles.contentSet}>
@@ -108,10 +108,10 @@ export default function ServiceCards() {
                   experiences and strong performance.
                 </h3>
                 <ul className={styles.light}>
-                  <li>3D Website Design</li>
-                  <li>Product Visuals</li>
-                  <li>Interactive components</li>
-                  <li>Motion Graphics</li>
+                  <li>iOS & Android App Design</li>
+                  <li>Cross-Platform Development</li>
+                  <li>API & Backend Integration</li>
+                  <li>Performance Optimization</li>
                 </ul>
                 {/* <div className="stackPage rotatingText">
                     <Image
@@ -142,10 +142,10 @@ export default function ServiceCards() {
                   and differentiate your business.
                 </h3>
                 <ul>
-                  <li>3D Website Design</li>
-                  <li>Product Visuals</li>
-                  <li>Interactive components</li>
-                  <li>Motion Graphics</li>
+                  <li>Logo design</li>
+                  <li>Brand guidelines</li>
+                  <li>Visual language</li>
+                  <li>Brand Mockups</li>
                 </ul>
                 {/* <div className="stackPage rotatingText">
                     <Image
@@ -190,10 +190,10 @@ export default function ServiceCards() {
                   and smooth interaction flows.
                 </h3>
                 <ul className={styles.light}>
-                  <li>3D Website Design</li>
-                  <li>Product Visuals</li>
-                  <li>Interactive components</li>
-                  <li>Motion Graphics</li>
+                  <li>User research</li>
+                  <li>Wireframing</li>
+                  <li>Design System</li>
+                  <li>Prototype</li>
                 </ul>
                 {/* <div className="stackPage rotatingText">
                     <Image
@@ -214,20 +214,20 @@ export default function ServiceCards() {
           </div>
           <div className={styles.stackBox}>
             <div className={styles.tagBox3}>
-              <h4>product landing</h4>
+              <h4>Web Applications</h4>
             </div>
             <div className={styles.contentFlexWrapper}>
               <div className={styles.contentSet}>
-                <h2 className={styles.light}>Product Landing Pages</h2>
+                <h2 className={styles.light}>Web Application Development</h2>
                 <h3 className={styles.light}>
-                  High-conversion, visually striking landing pages ideal for
-                  launches, campaigns, and marketing.
+                  High-performance, scalable web applications built for complex
+                  business workflows, automation, and seamless user experiences.
                 </h3>
                 <ul className={styles.light}>
-                  <li>3D Website Design</li>
-                  <li>Product Visuals</li>
-                  <li>Interactive components</li>
-                  <li>Motion Graphics</li>
+                  <li>Custom Web App Development</li>
+                  <li>Modern Frontend Frameworks</li>
+                  <li>API & Cloud Integration</li>
+                  <li>Secure & Scalable Architecture</li>
                 </ul>
                 {/* <div className="stackPage rotatingText">
                     <Image
@@ -245,11 +245,9 @@ export default function ServiceCards() {
                   </div> */}
               </div>
               <div className={styles.imgSet}>
-                <Image
-                  src="/images/service-img-6.png"
-                  alt="Service Image"
-                  fill
-                />
+                <video autoPlay muted loop playsInline preload="auto">
+                  <source src="/videos/service-vid-3.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
