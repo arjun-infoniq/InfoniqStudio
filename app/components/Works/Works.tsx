@@ -142,8 +142,8 @@ export default function Works() {
       <section className={styles.mainPortfolioWrapper}>
         <div className={styles.portfolioParentBox}>
           <div className="mainContainer">
+            <h4 className="cmnTagHeading">Portfolio</h4>
             <div className={styles.portfolioheader}>
-              <h4 className="cmnTagHeading">Portfolio</h4>
               <h2 className="cmnMainHeading">Crafted With Vision</h2>
               <h3>delivered with precision</h3>
             </div>
