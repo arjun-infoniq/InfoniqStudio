@@ -42,7 +42,7 @@ export default function Home() {
         <div className="mainContainer">
           <div className={styles.heroWrapper}>
             <div className={styles.leftSection}>
-              <h2>Crafting Modern Web Experiences</h2>
+              <h1>Crafting Modern Web Experiences</h1>
               <div className={styles.flexWrapper}>
                 <div className="rotatingText">
                   <Image
