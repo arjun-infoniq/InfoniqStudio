@@ -59,8 +59,9 @@ export default function Header() {
     <nav className={`${styles.mainHeader} ${isActive ? styles.active : ""}`}>
       <div className="mainContainer">
         <div className={styles.navFlex}>
-          <div className={styles.logoWrapper}>
-            <Image src="/images/logo.svg" alt="Logo" fill />
+          <div className={styles.logoWrapper} 
+          >
+            <Image src="/images/logo.svg" alt="Logo" fill onClick={() => handleNavClick("home")}/>
           </div>
           <div className={styles.menuWrapper}>
             <ul className={mobileMenuOpen ? styles.mobileMenuOpen : ""}>

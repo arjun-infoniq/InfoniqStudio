@@ -227,7 +227,6 @@ export default function Works() {
                       opacity: imageLoaded ? 1 : 0.5,
                       transition: "opacity 0.3s ease",
                     }}
-                    priority
                   />
                 ) : selectedItem.mediaType === "image" &&
                   selectedItem.imageSrc ? (
@@ -244,7 +243,6 @@ export default function Works() {
                       opacity: imageLoaded ? 1 : 0.5,
                       transition: "opacity 0.3s ease",
                     }}
-                    priority
                   />
                 ) : selectedItem.mediaType === "video" &&
                   selectedItem.videoSrc ? (
