@@ -17,9 +17,12 @@ export default function ServiceCards() {
             </div>
             <div className={styles.contentFlexWrapper}>
               <div className={styles.imgSet}>
-                <video autoPlay muted loop playsInline preload="auto">
-                  <source src="/videos/service-vid-1.mp4" type="video/mp4" />
-                </video>
+               <Image
+                  src="/images/service-img-1.png"
+                  alt="Service Image"
+                  fill
+                  loading="lazy"
+                />
               </div>
               <div className={styles.contentSet}>
                 <h2>3D Interactive Websites</h2>
@@ -87,6 +90,7 @@ export default function ServiceCards() {
                   src="/images/service-img-2.webp"
                   alt="Service Image"
                   fill
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -97,9 +101,12 @@ export default function ServiceCards() {
             </div>
             <div className={styles.contentFlexWrapper}>
               <div className={styles.imgSet}>
-                <video autoPlay muted loop playsInline preload="auto">
-                  <source src="/videos/service-vid-2.mp4" type="video/mp4" />
-                </video>
+                <Image
+                  src="/images/service-img-3.png"
+                  alt="Service Image"
+                  fill
+                  loading="lazy"
+                />
               </div>
               <div className={styles.contentSet}>
                 <h2 className={styles.light}>Mobile App Development</h2>
@@ -164,9 +171,10 @@ export default function ServiceCards() {
               </div>
               <div className={styles.imgSet}>
                 <Image
-                  src="/images/service-img-4.webp"
+                  src="/images/service-img-4.png"
                   alt="Service Image"
                   fill
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -181,6 +189,7 @@ export default function ServiceCards() {
                   src="/images/service-img-5.webp"
                   alt="Service Image"
                   fill
+                  loading="lazy"
                 />
               </div>
               <div className={styles.contentSet}>
@@ -245,9 +254,12 @@ export default function ServiceCards() {
                   </div> */}
               </div>
               <div className={styles.imgSet}>
-                <video autoPlay muted loop playsInline preload="auto">
-                  <source src="/videos/service-vid-3.mp4" type="video/mp4" />
-                </video>
+                 <Image
+                  src="/images/service-img-6.png"
+                  alt="Service Image"
+                  fill
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
