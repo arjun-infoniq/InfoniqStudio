@@ -27,7 +27,7 @@ const portfolioData: PortfolioItem[] = [
       "Immersive, high-performance websites built with advanced 3D visuals, smooth animations, and modern UI.",
     altText: "3D Interactive Websites",
     captionText: "3D Interactive Websites",
-    popupImage: "/images/portfolio-popup-1.jpg",
+    popupImage: "/images/portfolio-popup-1.webp",
   },
   {
     tagName: "UI/UX DESIGN",
@@ -38,18 +38,18 @@ const portfolioData: PortfolioItem[] = [
       "Impact-driven films and digital content crafted to connect, engage, and perform across modern media platforms.",
     altText: "Creative Storytelling & Production",
     captionText: "Creative Storytelling & Production",
-    popupImage: "/images/portfolio-popup-2.jpg",
+    popupImage: "/images/portfolio-popup-2.webp",
   },
   {
     tagName: "UI/UX DESIGN",
-    imageSrc: "/images/portfolio-12.png",
+    imageSrc: "/images/portfolio-12.webp",
     mediaType: "image",
     mainHeading: "Nova - Next Gen Electric Scooters",
     subHeading:
       "Smart electric scooter development with efficient motors, battery management, safety, connectivity, and sustainability.",
     altText: "Nova - Next Gen Electric Scooters",
     captionText: "Nova - Next Gen Electric Scooters",
-    popupImage: "/images/portfolio-popup-3.jpg",
+    popupImage: "/images/portfolio-popup-3.webp",
   },
 
   {
@@ -61,7 +61,7 @@ const portfolioData: PortfolioItem[] = [
       "A cinematic website translating bold storytelling into a clear, high-performance digital experience.",
     altText: "Buildco Architects Website Experience",
     captionText: "Buildco Architects Website Experience",
-    popupImage: "/images/portfolio-popup-4.jpg",
+    popupImage: "/images/portfolio-popup-4.webp",
   },
   //   {
   //   tagName: "UI/UX DESIGN",
@@ -77,26 +77,26 @@ const portfolioData: PortfolioItem[] = [
 
   {
     tagName: "UI/UX DESIGN",
-    imageSrc: "/images/portfolio-14.png",
+    imageSrc: "/images/portfolio-14.webp",
     mediaType: "image",
     mainHeading: "Skin Care Brand Identity & E-commerce",
     subHeading:
       "A cohesive brand identity and e-commerce experience for a modern skincare line, blending aesthetics with seamless shopping.",
     altText: "Skin Care Brand Identity & E-commerce",
     captionText: "Skin Care Brand Identity & E-commerce",
-    popupImage: "/images/portfolio-popup-5.jpg",
+    popupImage: "/images/portfolio-popup-5.webp",
   },
 
   {
     tagName: "UI/UX DESIGN",
-    imageSrc: "/images/portfolio-15.png",
+    imageSrc: "/images/portfolio-15.webp",
     mediaType: "image",
     mainHeading: "Perfume Brand Identity Website",
     subHeading:
       "A cohesive brand identity experience for a modern perfume line, blending aesthetics with seamless shopping.",
     altText: "Perfume Brand Identity Website",
     captionText: "Perfume Brand Identity Website",
-    popupImage: "/images/portfolio-popup-6.jpg",
+    popupImage: "/images/portfolio-popup-6.webp",
   },
 
   // {
@@ -126,14 +126,26 @@ export default function Works() {
   };
 
   // prevent body scroll when modal open
+  // useEffect(() => {
+  //   if (selectedItem) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [selectedItem]);
+
   useEffect(() => {
     if (selectedItem) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "auto";
     }
+
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "auto";
     };
   }, [selectedItem]);
 

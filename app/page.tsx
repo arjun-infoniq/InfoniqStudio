@@ -91,31 +91,31 @@ export default function Home() {
                   className={styles.heroSlider}
                 >
                   <SwiperSlide>
-                    <Image src="/images/swiper-1.png" alt="Slide 1" fill />
+                    <Image src="/images/swiper-1.webp" alt="Slide 1" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-2.png" alt="Slide 2" fill />
+                    <Image src="/images/swiper-2.webp" alt="Slide 2" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-3.png" alt="Slide 3" fill />
+                    <Image src="/images/swiper-3.webp" alt="Slide 3" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-4.png" alt="Slide 4" fill />
+                    <Image src="/images/swiper-4.webp" alt="Slide 4" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-5.png" alt="Slide 5" fill />
+                    <Image src="/images/swiper-5.webp" alt="Slide 5" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-6.png" alt="Slide 5" fill />
+                    <Image src="/images/swiper-6.webp" alt="Slide 5" fill />
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <Image src="/images/swiper-7.png" alt="Slide 5" fill />
+                    <Image src="/images/swiper-7.webp" alt="Slide 5" fill />
                   </SwiperSlide>
                 </Swiper>
                 <div className={styles.swiperBottom}>
@@ -169,7 +169,7 @@ export default function Home() {
               <h3>Designing the</h3>
               <h3>
                 Future{" "}
-                <Image src="/images/text-portfolio.png" alt="Portfolio" fill />
+                <Image src="/images/text-portfolio.webp" alt="Portfolio" fill />
               </h3>
               <h3>of Digital</h3>
               <h3>Experiences</h3>
