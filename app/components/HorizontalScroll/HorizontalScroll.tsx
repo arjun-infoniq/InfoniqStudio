@@ -4,9 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import './HorizontalScroll.scss';
-
-
+import "./HorizontalScroll.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +27,7 @@ export default function HorizontalScroll() {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top top",          // 🔥 starts when section appears
+          start: "top top", // 🔥 starts when section appears
           end: () => `+=${scrollWidth}`,
           scrub: true,
           pin: true,
@@ -46,15 +44,8 @@ export default function HorizontalScroll() {
       ref={sectionRef}
       className="relative h-screen overflow-hidden bg-black"
     >
-      <div
-        ref={trackRef}
-        className="flex h-full"
-      >
-        <div className="panel">
-          <video autoPlay muted loop playsInline preload="auto">
-                <source src="/videos/preview-1.mp4" type="video/mp4" />
-              </video>
-        </div>
+      <div ref={trackRef} className="flex h-full">
+        <div className="panel">Panel 1</div>
         <div className="panel">Panel 2</div>
         <div className="panel">Panel 3</div>
         <div className="panel">Panel 4</div>
