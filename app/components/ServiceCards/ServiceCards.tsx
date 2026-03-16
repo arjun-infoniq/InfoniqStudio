@@ -84,7 +84,7 @@ export default function ServiceCards() {
               </div>
               <div className={styles.imgSet}>
                 <Image
-                  src="/images/service-img-2.png"
+                  src="/images/service-img-2.webp"
                   alt="Service Image"
                   fill
                 />
@@ -164,7 +164,7 @@ export default function ServiceCards() {
               </div>
               <div className={styles.imgSet}>
                 <Image
-                  src="/images/service-img-4.png"
+                  src="/images/service-img-4.webp"
                   alt="Service Image"
                   fill
                 />
@@ -178,7 +178,7 @@ export default function ServiceCards() {
             <div className={styles.contentFlexWrapper}>
               <div className={styles.imgSet}>
                 <Image
-                  src="/images/service-img-5.png"
+                  src="/images/service-img-5.webp"
                   alt="Service Image"
                   fill
                 />

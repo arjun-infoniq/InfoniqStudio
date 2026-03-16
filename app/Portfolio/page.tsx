@@ -1,6 +1,6 @@
 "use client";
 
-
+import { useEffect } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,6 +10,13 @@ import styles from "./Portfolio.module.scss";
 import Works from "../components/Works/Works";
 
 export default function PortfolioPage() {
+  useEffect(() => {
+    document.title = "Our Portfolio | Infoniq Studio - Showcase of Digital Projects";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Explore our portfolio of cutting-edge 3D interactive websites, mobile applications, and brand identity designs. See our latest work and digital innovations.");
+    }
+  }, []);
 
    const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -20,7 +27,6 @@ export default function PortfolioPage() {
 
   return (
     <>
-      
 
       <section className={styles.servicesMainWrapper}>
         <div className="mainContainer">

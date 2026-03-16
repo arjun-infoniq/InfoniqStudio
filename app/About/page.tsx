@@ -1,10 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./About.module.scss";
 
 export default function AboutPage() {
   const router = useRouter();
+
+  useEffect(() => {
+    document.title = "About Us | Infoniq Studio - Design-Driven Digital Agency";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Learn about Infoniq Studio, a modern software design and development studio specializing in 3D interactive websites, mobile apps, and brand identities.");
+    }
+  }, []);
 
   const handleNavClick = (sectionId: string) => {
     if (sectionId === "portfolio") {
