@@ -1,55 +1,95 @@
-$loader-color: #ffffff;
-$bg-color: #0d0d0d;
-
 .overlay {
     position: fixed;
     inset: 0;
-    background: #000;
-    display: grid;
-    place-items: center;
-    z-index: 9999;
-}
-.logoWrapper {
-    position: relative;
-    width: 120px;
-    height: 120px;
-}
-
-.loader {
+    background: radial-gradient(circle at center, #0a0a0a, #000);
     display: flex;
-    gap: 0.5rem;
-
-    span {
-        width: 12px;
-        height: 12px;
-        background: $loader-color;
-        border-radius: 50%;
-        display: inline-block;
-        animation: bounce 0.6s infinite alternate;
-
-        &:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        &:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-    }
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
 }
 
-@keyframes bounce {
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    letter-spacing: 6px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: var(--font-bruno);
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glow 2s infinite alternate;
+    // img {
+    //     max-height: 200px;
+    // }
+}
+
+@keyframes glow {
     from {
-        transform: translateY(0);
-        opacity: 0.7;
+        opacity: 0.6;
     }
     to {
-        transform: translateY(-12px);
         opacity: 1;
     }
 }
 
-.logoWrapper {
+.circle {
     position: relative;
+    width: 120px;
+    height: 120px;
+
+    svg {
+        transform: rotate(-90deg);
+        width: 120px;
+        height: 120px;
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 6;
+        stroke-linecap: round;
+    }
+
+    circle:first-child {
+        stroke: rgba(255, 255, 255, 0.1);
+    }
+
+    circle:last-child {
+        stroke: var(--theme);
+        stroke-dasharray: 339;
+        transition: stroke-dashoffset 0.2s ease;
+    }
+}
+
+.percentage {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.tagline {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #aaa;
+    text-transform: uppercase;
 }
