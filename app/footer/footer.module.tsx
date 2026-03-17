@@ -23,6 +23,20 @@ export default function Footer() {
                 future.
               </h3>
             </div>
+            <div className="rotatingText">
+              <Image
+                src="/images/rotate-text.svg"
+                className="rText"
+                alt="Rotate Text"
+                fill
+              />
+              <Image
+                src="/icons/arrow-red.svg"
+                className="rArrow"
+                alt="Rotate Text"
+                fill
+              />
+            </div>
           </div>
           <div className={styles.sectTwo}>
             <ul>
@@ -77,15 +91,6 @@ export default function Footer() {
                 hello@infoniq.studio
               </a>
             </p>
-          </div>
-          <div className={styles.sectFour}>
-            <video
-              src="/videos/logo-rotate.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            ></video>
           </div>
         </div>
       </div>
