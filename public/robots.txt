@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://infoniqstudio.com/sitemap.xml
+Sitemap: https://infoniq.studio/sitemap.xml
