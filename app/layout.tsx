@@ -95,7 +95,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Infoniq Studio",
               "url": "https://infoniqstudio.com",
-              "logo": "https://infoniqstudio.com/images/logo.svg",
+              "logo": "https://infoniq.studio/images/logo.svg",
               "description": "Modern software design and development studio crafting cutting-edge 3D interactive websites, mobile apps, and brand identities.",
               "foundingDate": "2024",
               "contactPoint": {
