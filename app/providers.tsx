@@ -16,6 +16,10 @@ export function SmoothScrollProvider({
       lerp: 0.1,
     });
 
+    // Expose for route-level scroll control (e.g., scroll-to-top on navigation).
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).__lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);

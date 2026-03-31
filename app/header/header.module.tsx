@@ -38,6 +38,8 @@ export default function Header() {
     if (pathname === "/About/") return "about";
     if (pathname === "/Services/") return "services";
     if (pathname === "/Portfolio/") return "portfolio";
+    // Portfolio details page lives under /Works/[id]/.
+    if (pathname.startsWith("/Works/")) return "portfolio";
     if (pathname === "/Contact/") return "contact";
     return "";
   };
