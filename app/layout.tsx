@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://infoniqstudio.com"), // Replace with your actual domain
+  metadataBase: new URL("https://infoniq.studio"), // Replace with your actual domain
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Infoniq Studio | Modern Web Design & Development Agency",
     description: "Crafting modern, aesthetic, and interactive digital experiences with a blend of design and technology.",
-    url: "https://infoniqstudio.com",
+    url: "https://infoniq.studio",
     siteName: "Infoniq Studio",
     images: [
       {
@@ -94,7 +94,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Infoniq Studio",
-              "url": "https://infoniqstudio.com",
+              "url": "https://infoniq.studio",
               "logo": "https://infoniq.studio/images/logo.svg",
               "description": "Modern software design and development studio crafting cutting-edge 3D interactive websites, mobile apps, and brand identities.",
               "foundingDate": "2024",
